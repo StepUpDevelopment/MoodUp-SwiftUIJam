@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum MoodType: Int {
     case awful = 0
@@ -15,4 +16,30 @@ enum MoodType: Int {
     case good = 4
     case great = 5
     case excellent = 6
+}
+
+extension MoodType {
+	
+	var icon: Image {		
+		return Image("\(self)")
+	}
+	
+	var color: Color {
+		switch self {
+		case .awful:
+			return .awfulMood
+		case .bad:
+			return .badMood
+		case .meh:
+			return .mehMood
+		case .okay:
+			return .okayMood
+		case .good:
+			return .goodMood
+		case .great:
+			return .greatMood
+		case .excellent:
+			return .excellentMood
+		}
+	}
 }

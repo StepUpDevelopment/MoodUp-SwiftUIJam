@@ -13,9 +13,11 @@ extension Color {
 	static let awfulMood = Color("AwfulMood")
 	static let badMood = Color("BadMood")
 	static let mehMood = Color("MehMood")
-	static let okayMood = Color("okayMood")
+	static let okayMood = Color("OkayMood")
 	static let goodMood = Color("GoodMood")
-	static let excellentMood = Color("excellentMood")
+	static let greatMood = Color("GreatMood")
+	static let excellentMood = Color("ExcellentMood")
+	static let smileyForegroundColor = Color("SmileyForegroundColor")
 	
 	static let mainGradientBottom = Color("MainGradientBottom")
 	static let mainGradientTop = Color("MainGradientTop")
