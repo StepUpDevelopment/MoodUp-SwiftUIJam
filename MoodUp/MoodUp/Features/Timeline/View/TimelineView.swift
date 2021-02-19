@@ -12,8 +12,12 @@ struct TimelineView: View {
 		ZStack {
 			LinearGradient.main
 				.ignoresSafeArea()
-			Text("Hello, world!")
-				.padding()
+            VStack {
+                Text("Hello, world!")
+                    .padding()
+
+                MainButton(buttonTitle: "add_mood", buttonAction: { print("test")})
+            }
 		}
 			
     }

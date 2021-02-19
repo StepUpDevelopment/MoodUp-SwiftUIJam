@@ -22,6 +22,7 @@
 		34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0F25E03B0E0048DD72 /* StorageProvider.swift */; };
 		34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD1625E04FBE0048DD72 /* TabBarView.swift */; };
 		34B3AD1F25E051110048DD72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34B3AD2125E051110048DD72 /* Localizable.strings */; };
+		A401B2FC25E057FD0061CAFD /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401B2FB25E057FD0061CAFD /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		34B3AD0F25E03B0E0048DD72 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		34B3AD1625E04FBE0048DD72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		34B3AD2025E051110048DD72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A401B2FB25E057FD0061CAFD /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		34B3ACFE25E0305A0048DD72 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				A401B2FA25E057A40061CAFD /* View */,
 				34B3AD0025E033340048DD72 /* Model */,
 			);
 			path = Global;
@@ -178,6 +181,14 @@
 			isa = PBXGroup;
 			children = (
 				34B3ACE825DFF5750048DD72 /* TimelineView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A401B2FA25E057A40061CAFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A401B2FB25E057FD0061CAFD /* MainButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
 				34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */,
+				A401B2FC25E057FD0061CAFD /* MainButton.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
