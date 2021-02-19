@@ -1,1 +1,1 @@
-# Mood-Up
+# Mood Up
