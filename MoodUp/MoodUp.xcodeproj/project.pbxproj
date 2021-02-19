@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
 		34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* ContentView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodCategory+CoreData.swift"; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
 		34B3ACE825DFF5750048DD72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				34B3AD0525E034000048DD72 /* MoodEntry.swift */,
 				34B3AD0825E034380048DD72 /* MoodCategory.swift */,
 				34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */,
+				0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */,
+				0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
 				34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */,
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,

@@ -12,7 +12,6 @@ extension MoodEntry {
     
     func coreDataModel(context: NSManagedObjectContext) -> DbMoodEntry {
         let dbEntry = DbMoodEntry(context: context)
-        // TODO: Set categories
         dbEntry.text = text
         dbEntry.createdDate = createdDate
         dbEntry.type = Int64(moodType.rawValue)
