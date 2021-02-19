@@ -41,7 +41,7 @@ struct NewEntryView: View {
             VStack {
                 SmileyView(moodType: moodType)
                 Text(title)
-                    .foregroundColor(.smileyForegroundColor)
+                    .foregroundColor(.primaryForegroundColor)
             }
         })
         .buttonStyle(SelectableButtonStyle())
