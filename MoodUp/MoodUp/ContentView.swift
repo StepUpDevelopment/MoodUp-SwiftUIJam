@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+		ZStack {
+			LinearGradient.main
+				.ignoresSafeArea()
+			Text("Hello, world!")
+				.padding()
+		}
+			
     }
 }
 
