@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TimelineView.swift
 //  MoodUp
 //
 //  Created by Nicolas Spinner on 19.02.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TimelineView: View {
     var body: some View {
 		ZStack {
 			LinearGradient.main
@@ -19,8 +19,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TimelineView()
     }
 }

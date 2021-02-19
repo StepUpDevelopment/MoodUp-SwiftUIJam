@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MoodUp
+
+  Created by Nicolas Spinner on 19.02.21.
+  
+*/
+
+"timeline" = "Timeline";
+"stats" = "Stats";
+"settings" = "Settings";

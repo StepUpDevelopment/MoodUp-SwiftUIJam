@@ -11,7 +11,7 @@
 		0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */; };
 		0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
-		34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* ContentView.swift */; };
+		34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* TimelineView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
 		34B3ACEE25DFF5760048DD72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACED25DFF5760048DD72 /* Preview Assets.xcassets */; };
 		34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACFA25E02F440048DD72 /* MoodUp.xcdatamodeld */; };
@@ -20,6 +20,8 @@
 		34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0825E034380048DD72 /* MoodCategory.swift */; };
 		34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */; };
 		34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0F25E03B0E0048DD72 /* StorageProvider.swift */; };
+		34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD1625E04FBE0048DD72 /* TabBarView.swift */; };
+		34B3AD1F25E051110048DD72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34B3AD2125E051110048DD72 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,7 @@
 		0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Assets.swift"; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
-		34B3ACE825DFF5750048DD72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34B3ACE825DFF5750048DD72 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		34B3ACEA25DFF5760048DD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34B3ACED25DFF5760048DD72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34B3ACEF25DFF5760048DD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		34B3AD0825E034380048DD72 /* MoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCategory.swift; sourceTree = "<group>"; };
 		34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodEntry+CoreData.swift"; sourceTree = "<group>"; };
 		34B3AD0F25E03B0E0048DD72 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		34B3AD1625E04FBE0048DD72 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		34B3AD2025E051110048DD72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,12 @@
 		34B3ACE525DFF5750048DD72 /* MoodUp */ = {
 			isa = PBXGroup;
 			children = (
+				34B3AD1A25E050E60048DD72 /* SupportingFiles */,
 				0AB08DCD25E03A3F0004B4B5 /* Extensions */,
 				34B3ACFE25E0305A0048DD72 /* Global */,
 				34B3ACF725E02E7B0048DD72 /* CoreData */,
 				34B3ACF625E02E720048DD72 /* Features */,
 				34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */,
-				34B3ACE825DFF5750048DD72 /* ContentView.swift */,
 				34B3ACEA25DFF5760048DD72 /* Assets.xcassets */,
 				34B3ACEF25DFF5760048DD72 /* Info.plist */,
 				34B3ACEC25DFF5760048DD72 /* Preview Content */,
@@ -103,6 +107,7 @@
 		34B3ACF625E02E720048DD72 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				34B3AD1525E04FA90048DD72 /* TabBar */,
 				34B3ACF925E02ECB0048DD72 /* NewEntry */,
 				34B3ACF825E02EC60048DD72 /* Timeline */,
 			);
@@ -121,6 +126,7 @@
 		34B3ACF825E02EC60048DD72 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				34B3AD2425E051F30048DD72 /* View */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -150,6 +156,30 @@
 				0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		34B3AD1525E04FA90048DD72 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				34B3AD1625E04FBE0048DD72 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		34B3AD1A25E050E60048DD72 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				34B3AD2125E051110048DD72 /* Localizable.strings */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		34B3AD2425E051F30048DD72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				34B3ACE825DFF5750048DD72 /* TimelineView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B3ACEE25DFF5760048DD72 /* Preview Assets.xcassets in Resources */,
+				34B3AD1F25E051110048DD72 /* Localizable.strings in Resources */,
 				34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,17 +256,29 @@
 				0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
 				0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */,
-				34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */,
+				34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */,
 				0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */,
 				34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */,
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
 				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
+				34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34B3AD2125E051110048DD72 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34B3AD2025E051110048DD72 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		34B3ACF025DFF5760048DD72 /* Debug */ = {
