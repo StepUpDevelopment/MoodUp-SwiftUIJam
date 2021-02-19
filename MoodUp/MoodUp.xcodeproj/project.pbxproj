@@ -11,6 +11,11 @@
 		34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* ContentView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
 		34B3ACEE25DFF5760048DD72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACED25DFF5760048DD72 /* Preview Assets.xcassets */; };
+		34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACFA25E02F440048DD72 /* MoodUp.xcdatamodeld */; };
+		34B3AD0225E033880048DD72 /* MoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0125E033880048DD72 /* MoodType.swift */; };
+		34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0525E034000048DD72 /* MoodEntry.swift */; };
+		34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0825E034380048DD72 /* MoodCategory.swift */; };
+		34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		34B3ACEA25DFF5760048DD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34B3ACED25DFF5760048DD72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34B3ACEF25DFF5760048DD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34B3ACFB25E02F440048DD72 /* MoodUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodUp.xcdatamodel; sourceTree = "<group>"; };
+		34B3AD0125E033880048DD72 /* MoodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodType.swift; sourceTree = "<group>"; };
+		34B3AD0525E034000048DD72 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		34B3AD0825E034380048DD72 /* MoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCategory.swift; sourceTree = "<group>"; };
+		34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodEntry+CoreData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +62,9 @@
 		34B3ACE525DFF5750048DD72 /* MoodUp */ = {
 			isa = PBXGroup;
 			children = (
+				34B3ACFE25E0305A0048DD72 /* Global */,
+				34B3ACF725E02E7B0048DD72 /* CoreData */,
+				34B3ACF625E02E720048DD72 /* Features */,
 				34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */,
 				34B3ACE825DFF5750048DD72 /* ContentView.swift */,
 				34B3ACEA25DFF5760048DD72 /* Assets.xcassets */,
@@ -67,6 +80,56 @@
 				34B3ACED25DFF5760048DD72 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34B3ACF625E02E720048DD72 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				34B3ACF925E02ECB0048DD72 /* NewEntry */,
+				34B3ACF825E02EC60048DD72 /* Timeline */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		34B3ACF725E02E7B0048DD72 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				34B3ACFA25E02F440048DD72 /* MoodUp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		34B3ACF825E02EC60048DD72 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		34B3ACF925E02ECB0048DD72 /* NewEntry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewEntry;
+			sourceTree = "<group>";
+		};
+		34B3ACFE25E0305A0048DD72 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				34B3AD0025E033340048DD72 /* Model */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		34B3AD0025E033340048DD72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34B3AD0125E033880048DD72 /* MoodType.swift */,
+				34B3AD0525E034000048DD72 /* MoodEntry.swift */,
+				34B3AD0825E034380048DD72 /* MoodCategory.swift */,
+				34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */,
+				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
 				34B3ACE925DFF5750048DD72 /* ContentView.swift in Sources */,
+				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
+				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
+				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		34B3ACFA25E02F440048DD72 /* MoodUp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				34B3ACFB25E02F440048DD72 /* MoodUp.xcdatamodel */,
+			);
+			currentVersion = 34B3ACFB25E02F440048DD72 /* MoodUp.xcdatamodel */;
+			path = MoodUp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 34B3ACDB25DFF5750048DD72 /* Project object */;
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DbMoodCategory" representedClassName="DbMoodCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="iconName" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DbMoodEntry" inverseName="categories" inverseEntity="DbMoodEntry"/>
+    </entity>
+    <entity name="DbMoodEntry" representedClassName="DbMoodEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DbMoodCategory" inverseName="entries" inverseEntity="DbMoodCategory"/>
+    </entity>
+    <elements>
+        <element name="DbMoodEntry" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="DbMoodCategory" positionX="-54" positionY="18" width="128" height="88"/>
+    </elements>
+</model>
