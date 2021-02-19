@@ -10,4 +10,7 @@
 "stats" = "Stats";
 "settings" = "Settings";
 
+// New entry
+"new_entry_title" = "How are you feeling?";
+
 "add_mood" = "Add Mood";
