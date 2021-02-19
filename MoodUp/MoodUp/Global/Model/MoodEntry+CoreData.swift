@@ -19,3 +19,14 @@ extension MoodEntry {
     }
     
 }
+
+extension DbMoodEntry {
+    
+    func moodEntry() -> MoodEntry {
+        MoodEntry(moodType: MoodType(rawValue: Int(type)) ?? .okay,
+                  categories: [],
+                  text: text,
+                  createdDate: createdDate ?? Date())
+    }
+    
+}
