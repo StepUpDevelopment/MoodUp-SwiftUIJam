@@ -19,10 +19,10 @@ struct TabBarView: View {
             TimelineView().tabItem {
                 TabItem(title: "timeline", systemImage: "house.fill")
             }.tag(Tab.timeline)
-            Text("Stats").tabItem {
+            StatsView().tabItem {
                 TabItem(title: "stats", systemImage: "speedometer")
             }.tag(Tab.stats)
-            Text("Settings").tabItem {
+            SettingsView().tabItem {
                 TabItem(title: "settings", systemImage: "gear")
             }.tag(Tab.settings)
         }.edgesIgnoringSafeArea(.top)
