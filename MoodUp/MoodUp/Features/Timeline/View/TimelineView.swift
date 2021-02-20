@@ -24,9 +24,12 @@ struct TimelineView: View {
 
                 ScrollView {
                     LazyVStack {
-                        ForEach(viewModel.moodEntries, id: \.self) { moodEntry in
-                            TimelineCell(moodEntry: moodEntry)
-                        }
+						ForEach(viewModel.sections) { section in
+							Text(section.title)
+							ForEach(section.items, id: \.self) { moodEntry in
+								TimelineCell(moodEntry: moodEntry)
+							}
+						}
                     }
                 }
 

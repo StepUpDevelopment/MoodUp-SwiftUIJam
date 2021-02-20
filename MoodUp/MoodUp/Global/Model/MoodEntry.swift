@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct MoodEntry: Hashable {
+struct MoodEntry: Hashable, Identifiable {
     
     var moodType: MoodType
     var categories: [MoodCategory] = []
     var text: String?
     var createdDate: Date = Date()
+	var id: Date {
+		createdDate
+	}
 }

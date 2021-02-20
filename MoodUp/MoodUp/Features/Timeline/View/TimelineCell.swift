@@ -32,7 +32,7 @@ struct TimelineCell: View {
                     Text(moodEntry.moodType.titleKey)
                         .font(.headline)
                 }
-                Text(moodEntry.createdDate.relativeOrMediumString())
+                Text(moodEntry.createdDate.timeString())
                     .fontWeight(.light)
             }
             
