@@ -11,7 +11,11 @@ import SwiftUI
 struct MoodUpApp: App {
     
     let storageProvider = StorageProvider()
+	
     
+	init() {
+		CategoryImporter().execute()
+	}
     var body: some Scene {
         WindowGroup {
             TabBarView()

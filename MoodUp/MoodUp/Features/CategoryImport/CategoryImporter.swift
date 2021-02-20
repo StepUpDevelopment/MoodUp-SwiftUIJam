@@ -6,24 +6,54 @@
 //
 
 import Foundation
+import CryptoKit
 
 class CategoryImporter {
 	
 	private var storageProvider: StorageProvider
+	private let userDefaultsKey = "CategoriesImportHash"
 	
 	init(storageProvider: StorageProvider? = nil) {
 		self.storageProvider = storageProvider ?? StorageProvider()
 	}
 	
-	func parseImportJson() -> [CategoryJsonModel] {
+	func execute() {
 		
-		guard let url =  Bundle.main.url(forResource: "Categories", withExtension: "json") else {
-			return []
+		guard let fileData = importJsonData() else {
+			preconditionFailure("No Categories.json was provided or the json was invalid")
+		}		
+		
+		let fileHash = SHA256.hash(data: fileData).hashString
+		
+		let persistedHash = UserDefaults.standard.string(forKey: userDefaultsKey)
+		
+		if persistedHash != nil {
+			if persistedHash == fileHash {
+				print("Category Json does not differ from previous json, will not import new categories")
+				return
+			}
+			print("Category hash differs from saved category hash")
 		}
-					
+		
+		print("Import new Categories")
+		
+		importCategories(parseImportJson(data: fileData))
+		
+		UserDefaults.standard.set(fileHash, forKey: userDefaultsKey)
+	}
+	
+	private func importJsonData() -> Data? {
+		guard let url =  Bundle.main.url(forResource: "Categories", withExtension: "json") else {
+			return nil
+		}
+		
+		return try? Data(contentsOf: url)
+	}
+	
+	private func parseImportJson(data: Data) -> [CategoryJsonModel] {
+							
 		var categoryJsonModel: [CategoryJsonModel]?
 		do {
-			let data = try Data(contentsOf: url)
 			categoryJsonModel = try JSONDecoder().decode([CategoryJsonModel].self, from: data)
 		} catch {
 			print("Could not parse json")
@@ -32,9 +62,15 @@ class CategoryImporter {
 		
 	}
 			
-	func importCategories(_ categories: [CategoryJsonModel]) {
+	private func importCategories(_ categories: [CategoryJsonModel]) {
 		categories.forEach { model in
 			storageProvider.saveCategory(categoryJsonModel: model)
 		}
+	}
+}
+
+extension SHA256Digest {
+	var hashString: String {
+		compactMap { String(format: "%02x", $0) }.joined()
 	}
 }
