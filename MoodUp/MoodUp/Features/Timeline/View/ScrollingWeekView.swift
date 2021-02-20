@@ -9,22 +9,24 @@ import SwiftUI
 
 struct ScrollingWeekView: View {
     
-    var weekItems: [WeekItem] = {
-        let date = Date()
-        return WeekItem.weekItems(startingDate: date, offset: 3, numberOfItems: 30)
-    }()
+    typealias DayItemChanged = (DayItem) -> Void
     
-    @State var selectedItem: WeekItem = WeekItem.fromDate(date: Date())
+    @State var dayItems: [DayItem] = DayItem.weekItems(startingDate: Date(), offset: 3, numberOfItems: 30)
+    
+    var dayItemChanged: DayItemChanged?
+    
+    @State var selectedItem: DayItem = DayItem.fromDate(date: Date())
     
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.horizontal, showsIndicators: false) {
                 ScrollViewReader { value in
                     LazyHStack(spacing: 0) {
-                        ForEach(weekItems, id: \.self) { weekItem in
+                        ForEach(dayItems, id: \.self) { weekItem in
                             Button(action: {
                                 if weekItem.isSelectable {
                                     selectedItem = weekItem
+                                    dayItemChanged?(selectedItem)
                                     withAnimation {
                                         value.scrollTo(selectedItem, anchor: .center)
                                     }
@@ -44,7 +46,7 @@ struct ScrollingWeekView: View {
                         }
                     }
                     .onAppear {
-                        value.scrollTo(weekItems[weekItems.endIndex - 1], anchor: .trailing)
+                        value.scrollTo(dayItems[dayItems.endIndex - 1], anchor: .trailing)
                     }
                 }
             }
@@ -54,27 +56,27 @@ struct ScrollingWeekView: View {
     
 }
 
-struct WeekItem: Hashable {
+struct DayItem: Hashable {
     var day: Int
     var title: String
     var timestamp: TimeInterval
     var isSelectable: Bool
     
-    static func fromDate(date: Date, isSelectable: Bool = true) -> WeekItem {
+    static func fromDate(date: Date, isSelectable: Bool = true) -> DayItem {
         let components = Calendar.current.dateComponents([.day], from: date)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayName = dateFormatter.string(from: date).prefix(3)
-        return WeekItem(day: components.day ?? 0,
+        return DayItem(day: components.day ?? 0,
                         title: String(dayName),
                         timestamp: date.timeIntervalSince1970,
                         isSelectable: isSelectable)
     }
     
-    static func weekItems(startingDate: Date, offset: Int = 0, numberOfItems: Int) -> [WeekItem] {
+    static func weekItems(startingDate: Date, offset: Int = 0, numberOfItems: Int) -> [DayItem] {
         let startIndex = offset - numberOfItems
         let endIndex = offset
-        var totalDays: [WeekItem] = []
+        var totalDays: [DayItem] = []
         for index in startIndex...endIndex {
             let day = Calendar.current.date(byAdding: .day, value: index, to: startingDate)!
             totalDays.append(.fromDate(date: day, isSelectable: index <= 0))
@@ -82,7 +84,7 @@ struct WeekItem: Hashable {
         return totalDays
     }
     
-    static func == (lhs: WeekItem, rhs: WeekItem) -> Bool { return lhs.title == rhs.title && lhs.day == rhs.day
+    static func == (lhs: DayItem, rhs: DayItem) -> Bool { return lhs.title == rhs.title && lhs.day == rhs.day
     }
     
 }
