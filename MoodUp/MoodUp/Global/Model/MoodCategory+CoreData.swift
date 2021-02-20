@@ -15,6 +15,7 @@ extension MoodCategory {
 		let dbMoodCategory = DbMoodCategory(context: context)
 		dbMoodCategory.title = title
 		dbMoodCategory.iconName = iconName
+		dbMoodCategory.identifier = Int64(identifier)
 		return dbMoodCategory
 	}
 		
@@ -23,8 +24,11 @@ extension MoodCategory {
 extension DbMoodCategory {
 	
 	func moodCategory() -> MoodCategory {
-		let moodCategory = MoodCategory(title: title ?? "", iconName: iconName ?? "")
+		let moodCategory = MoodCategory(
+			identifier: Int(identifier),
+			title: title ?? "",
+			iconName: iconName ?? ""
+		)
 		return moodCategory
 	}
-	
 }

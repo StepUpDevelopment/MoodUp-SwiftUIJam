@@ -9,6 +9,7 @@ import Foundation
 
 struct MoodCategory {
     
+	var identifier: Int
     var title: String
     var iconName: String
 	
