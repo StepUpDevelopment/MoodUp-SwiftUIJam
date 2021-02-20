@@ -45,13 +45,40 @@ struct TimelineCell: View {
     
     var moodEntry: MoodEntry
     
+    private var columns: [GridItem]
+    
+    init(moodEntry: MoodEntry) {
+        self.moodEntry = moodEntry
+        let columnCount = (Double(moodEntry.categories.count) / 2.0).rounded(.up)
+        var columns: [GridItem] = []
+        for _ in 0..<Int(columnCount) {
+            columns.append(GridItem(.fixed(30), spacing: 8))
+        }
+        self.columns = columns
+    }
+    
     var body: some View {
-        Text(moodEntry.moodType.titleKey)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.selectableButtonBackground)
-            .embedInCardView()
-            .padding([.top, .leading, .trailing])
+        HStack {
+            Text(moodEntry.moodType.titleKey)
+            
+            Spacer()
+            
+            LazyVGrid(
+                columns: columns,
+                alignment: .center,
+                spacing: 8
+            ) {
+                ForEach(moodEntry.categories) { category in
+//                    Image(category.iconName)
+                    Text("Category")
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(Color.selectableButtonBackground)
+        .embedInCardView()
+        .padding([.top, .leading, .trailing])
     }
     
 }
