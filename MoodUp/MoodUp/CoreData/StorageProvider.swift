@@ -64,4 +64,28 @@ extension StorageProvider {
         }
     }
     
+    func saveCategory(moodCategory: MoodCategory) {
+        let _ = moodCategory.coreDataModel(context: persistentContainer.viewContext)
+
+        do {
+            try persistentContainer.viewContext.save()
+            print("Mood category saved succesfully")
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save mood categoory: \(error)")
+        }
+    }
+
+    func getAllCategories() -> [MoodCategory] {
+        let fetchRequest: NSFetchRequest<DbMoodCategory> = DbMoodCategory.fetchRequest()
+
+        do {
+            let dbCategories = try persistentContainer.viewContext.fetch(fetchRequest)
+            return dbCategories.map { $0.moodCategory() }
+        } catch {
+            print("Failed to fetch mood categories: \(error)")
+            return []
+        }
+    }
+    
 }
