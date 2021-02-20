@@ -94,6 +94,8 @@ extension StorageProvider {
     
     func getAllEntries() -> [MoodEntry] {
         let fetchRequest: NSFetchRequest<DbMoodEntry> = DbMoodEntry.fetchRequest()
+		let descendingSortDescriptor = NSSortDescriptor(key: "createdDate", ascending: false)
+		fetchRequest.sortDescriptors = [descendingSortDescriptor]
         
         do {
             let dbEntries = try persistentContainer.viewContext.fetch(fetchRequest)
