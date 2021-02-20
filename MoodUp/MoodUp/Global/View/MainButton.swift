@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainButton: View {
     var buttonTitle: LocalizedStringKey
-	var enabled = true
     var buttonAction: () -> Void
     
     var body: some View {
@@ -56,7 +55,7 @@ struct MainButton_Previews: PreviewProvider {
 	static var previews: some View {
 		VStack {
 			MainButton(buttonTitle: "Enabled") {}
-			MainButton(buttonTitle: "Disabled", enabled: false) {}
+			MainButton(buttonTitle: "Disabled") {}
 		}
 	}
 }

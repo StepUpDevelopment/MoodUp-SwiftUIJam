@@ -16,7 +16,6 @@ struct NewEntryView: View {
     @Binding var isShowingNewEntryView: Bool
 	
 	var storageProvider: StorageProvider
-
     
     var body: some View {
         NavigationView {
