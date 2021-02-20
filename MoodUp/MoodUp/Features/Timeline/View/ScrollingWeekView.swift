@@ -37,7 +37,7 @@ struct ScrollingWeekView: View {
                                         .fontWeight(weekItem == self.selectedItem ? .bold : .regular)
                                 }
                                 .font(weekItem == selectedItem ? .title3 : .body)
-                                .foregroundColor(weekItem.isSelectable ? .black : .gray)
+                                .foregroundColor(weekItem.isSelectable ? .primaryForegroundColor : Color.gray.opacity(0.7))
                                 .frame(width: proxy.size.width / 7)
                             })
                             .disabled(!weekItem.isSelectable)
