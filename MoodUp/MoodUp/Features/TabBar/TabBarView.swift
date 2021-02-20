@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State private var selectedTab = Tab.timeline
+	var storageProvider: StorageProvider
     
     enum Tab: Int {
         case timeline, stats, settings
@@ -16,7 +17,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            TimelineView().tabItem {
+            TimelineView(storageProvider: storageProvider).tabItem {
                 TabItem(title: "timeline", systemImage: "house.fill")
             }.tag(Tab.timeline)
             StatsView().tabItem {
@@ -44,6 +45,6 @@ struct TabItem: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        TabBarView(storageProvider: StorageProvider(inMemory: true))
     }
 }

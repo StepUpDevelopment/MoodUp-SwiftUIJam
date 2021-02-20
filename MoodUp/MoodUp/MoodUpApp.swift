@@ -19,7 +19,7 @@ struct MoodUpApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            TabBarView(storageProvider: storageProvider)
         }
     }
 }
