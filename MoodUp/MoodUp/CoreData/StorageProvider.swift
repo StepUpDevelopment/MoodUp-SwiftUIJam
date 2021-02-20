@@ -7,10 +7,13 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class StorageProvider {
 
     private let persistentContainer: NSPersistentContainer
+	
+	private let moodEntryPublisher = PassthroughSubject<[MoodEntry], Never>()
     
     static var previewProvider: StorageProvider = {
         let result = StorageProvider(inMemory: true)
@@ -40,6 +43,40 @@ class StorageProvider {
             }
         })
     }
+	
+	
+	func observe() -> AnyPublisher<[MoodEntry], Never> {
+		let managedObjectContext = persistentContainer.viewContext
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(
+				self,
+				selector: #selector(managedObjectContextObjectsDidChange),
+				name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+				object: managedObjectContext)
+		return moodEntryPublisher.eraseToAnyPublisher()
+		
+	}
+	
+	@objc func managedObjectContextObjectsDidChange(notification: NSNotification) {
+		guard let userInfo = notification.userInfo else { return }
+
+		if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
+
+			if let castedInserts = inserts as? Set<DbMoodEntry> {
+				moodEntryPublisher.send(Array(castedInserts).map {$0.moodEntry()})
+			}
+		}
+
+
+		//TODO: Maybe used later on
+		if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
+
+		}
+
+		if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+
+		}
+	}
 }
 
 extension StorageProvider {
