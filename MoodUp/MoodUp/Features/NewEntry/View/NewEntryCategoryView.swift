@@ -17,7 +17,6 @@ struct NewEntryCategoryView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Spacer()
                 Text("new_entry_category_title")
                     .font(.title)
                     .padding()
@@ -58,11 +57,12 @@ struct NewEntryCategoryGridView: View {
 
 struct NewEntryCategoryGridItemView: View {
     var category: MoodCategory
+    @State var isCategorySelected: Bool = false
 
     var body: some View {
         VStack {
             Button(action: {
-                
+                isCategorySelected = !isCategorySelected
             }, label: {
                 VStack {
                     Image(category.iconName)
@@ -72,7 +72,7 @@ struct NewEntryCategoryGridItemView: View {
                         .font(.caption)
                 }
             })
-            .buttonStyle(SelectableButtonStyle(isSelected: false))
+            .buttonStyle(SelectableButtonStyle(isSelected: isCategorySelected))
         }
     }
 }
