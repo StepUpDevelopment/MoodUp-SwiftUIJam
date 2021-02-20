@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct NewEntryView: View {
+    
+    @State var selectedMoods: Set<MoodType> = []
+    
     var body: some View {
         ZStack {
             LinearGradient.main
                 .ignoresSafeArea()
             
             VStack {
+                Spacer()
                 Text("new_entry_title")
                     .font(.title)
                     .padding()
@@ -30,35 +34,31 @@ struct NewEntryView: View {
                     moodButton(moodType: .great, title: "Great")
                     moodButton(moodType: .excellent, title: "Excellent")
                 }
+                Spacer()
+                MainButton(buttonTitle: "continue") {
+                    print("Show Categories")
+                }
             }
         }
     }
     
     private func moodButton(moodType: MoodType, title: String) -> some View {
         Button(action: {
-            print("aassd")
+            if selectedMoods.contains(moodType) {
+                selectedMoods.remove(moodType)
+            } else {
+                selectedMoods.insert(moodType)
+            }
         }, label: {
             VStack {
                 SmileyView(moodType: moodType)
                 Text(title)
-                    .foregroundColor(.primaryForegroundColor)
             }
         })
-        .buttonStyle(SelectableButtonStyle())
+        .buttonStyle(SelectableButtonStyle(isSelected: selectedMoods.contains(moodType)))
     }
 }
 
-struct SelectableButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration
-            .label
-            .foregroundColor(configuration.isPressed ? .gray : .white)
-            .padding()
-            .background(Color.selectableButtonBackground)
-            .cornerRadius(8)
-            .frame(width: 100, height: 120)
-    }
-}
 struct NewEntryView_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView()

@@ -23,5 +23,6 @@ extension Color {
 	static let mainGradientBottom = Color("MainGradientBottom")
 	static let mainGradientTop = Color("MainGradientTop")
     static let selectableButtonBackground = Color("SelectableButtonBackground")
+    static let primaryShadow = Color("PrimaryShadow")
 
 }

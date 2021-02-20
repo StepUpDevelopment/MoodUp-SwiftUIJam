@@ -10,6 +10,8 @@
 "stats" = "Stats";
 "settings" = "Settings";
 
+"continue" = "Continue";
+
 // New entry
 "new_entry_title" = "How are you feeling?";
 

@@ -12,9 +12,13 @@ struct MainButton: View {
     var buttonAction: () -> Void
     
     var body: some View {
-        Button(buttonTitle, action: buttonAction)
-            .buttonStyle(MainButtonStyle())
-            .cornerRadius(24.0)
+        Button(action: {
+            buttonAction()
+        }, label: {
+            Text(buttonTitle)
+        })
+        .buttonStyle(MainButtonStyle())
+        .cornerRadius(24.0)
     }
 }
 
