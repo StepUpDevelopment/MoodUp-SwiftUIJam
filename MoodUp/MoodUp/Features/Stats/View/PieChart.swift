@@ -18,16 +18,23 @@ struct PieChart : View {
 	
 	@ViewBuilder
 	var body: some View {
-		ZStack {
-			ForEach(angles, id: \.self) { angle in
-				Path { path in
-					path.move(to: CGPoint(x: 187, y: 187))
-					path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: angle.start, endAngle: angle.range, clockwise: false)
+		GeometryReader { geometry in
+			ZStack(alignment: .center) {
+				ForEach(angles, id: \.self) { angle in
+					let widthHalf = (geometry.size.width / 2)
+					let heightHalf = (geometry.size.height / 2)
+					Path { path in
+						path.move(to: CGPoint(x: widthHalf, y: heightHalf))
+						path.addArc(center: .init(x: widthHalf, y: heightHalf), radius: min(widthHalf, heightHalf), startAngle: angle.start, endAngle: angle.range, clockwise: false)
+					}
+					.fill(angle.color)
 				}
-				.fill(angle.color)
 			}
+			.aspectRatio(1, contentMode: .fill)
+			.background(Color.green)
 		}
 	}
+
 	private func startEndAngles(from values: [MoodTypeValue]) -> [TmpAngle] {
 				
 		let sum = values.reduce(0) { $0 + $1.value }
@@ -61,14 +68,13 @@ struct TmpAngle : Hashable {
 }
 
 struct PieChart_Previews: PreviewProvider {
-	static var previews: some View {
+	static var previews: some View {		
 		PieChart(values: [
 			MoodTypeValue(type: .bad, value: 10),
 			MoodTypeValue(type: .awful, value: 5),
 			MoodTypeValue(type: .excellent, value: 25),
 			MoodTypeValue(type: .great, value: 25),
 			MoodTypeValue(type: .meh, value: 80)
-
 		])
 	}
 }
