@@ -12,6 +12,9 @@ struct TimelineView: View {
     @ObservedObject var viewModel: TimelineViewModel
 
     @State private var isShowingNewEntryView = false
+    
+    //TODO remove me
+    @State private var entries = StorageProvider().getAllEntries()
 
     var body: some View {
 		ZStack {
@@ -24,10 +27,15 @@ struct TimelineView: View {
 
 
                 Spacer()
+                ForEach(0 ..< entries.count) { index in
+                    let currentEntry = entries[index]
+                    currentEntry.moodType.icon
+                }
+
                 MainButton(buttonTitle: "add_mood", buttonAction: {
                     self.isShowingNewEntryView = true
                 }).sheet(isPresented: $isShowingNewEntryView) {
-                    NewEntryView(storageProvider: viewModel.storageProvider)
+                    NewEntryView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
                 }
                 .padding()
             }

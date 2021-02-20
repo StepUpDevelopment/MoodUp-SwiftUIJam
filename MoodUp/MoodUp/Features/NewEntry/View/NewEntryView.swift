@@ -10,6 +10,8 @@ import SwiftUI
 struct NewEntryView: View {
     @State private var isShowingNewEntryCategoryView = false
     @State private var selectedMood: MoodType?
+    
+    @Binding var isShowingNewEntryView: Bool
 	
 	var storageProvider: StorageProvider
 
@@ -41,7 +43,7 @@ struct NewEntryView: View {
                     Spacer()					
 					if let selectedMood = selectedMood {
 						NavigationLink(destination: NewEntryCategoryView(
-							viewModel: NewEntryCategoryViewModel(moodType: selectedMood, storageProvider: storageProvider)
+                            isShowingNewEntryView: self.$isShowingNewEntryView, viewModel: NewEntryCategoryViewModel(moodType: selectedMood, storageProvider: storageProvider)
 						), isActive: $isShowingNewEntryCategoryView) {}
 					}
 					
@@ -72,6 +74,6 @@ struct NewEntryView: View {
 
 struct NewEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        NewEntryView(storageProvider: StorageProvider(inMemory: true))
+        NewEntryView(isShowingNewEntryView: .constant(true), storageProvider: StorageProvider(inMemory: true))
     }
 }

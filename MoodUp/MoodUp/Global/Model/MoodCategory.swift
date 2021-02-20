@@ -20,3 +20,8 @@ extension MoodCategory : Identifiable {
 		identifier
 	}		
 }
+
+extension MoodCategory : Equatable {
+   
+}
+
