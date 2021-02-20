@@ -10,6 +10,7 @@
 		0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */; };
 		0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */; };
 		0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */; };
+		345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
 		34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* TimelineView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Assets.swift"; sourceTree = "<group>"; };
 		0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Assets.swift"; sourceTree = "<group>"; };
 		0AC5294325E0563000B3042F /* SmileyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyView.swift; sourceTree = "<group>"; };
+		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
 		34B3ACE825DFF5750048DD72 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				A401B30325E05EB80061CAFD /* MainButton.swift */,
 				A401B30425E05EB80061CAFD /* SmileyView.swift */,
+				345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				A428041D25E065D50013D161 /* SettingsView.swift in Sources */,
 				34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */,
 				34B3AD2A25E058AC0048DD72 /* NewEntryView.swift in Sources */,
+				345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */,
 				0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */,
 				A401B30525E05EB80061CAFD /* MainButton.swift in Sources */,
 				A428042325E066200013D161 /* StatsView.swift in Sources */,

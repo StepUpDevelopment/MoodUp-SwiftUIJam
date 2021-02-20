@@ -10,6 +10,16 @@
 "stats" = "Stats";
 "settings" = "Settings";
 
+"continue" = "Continue";
+
+"awful" = "Awful";
+"bad" = "Bad";
+"meh" = "Meh";
+"okay" = "Okay";
+"good" = "Good";
+"great" = "Great";
+"excellent" = "Excellent";
+
 // New entry
 "new_entry_title" = "How are you feeling?";
 
