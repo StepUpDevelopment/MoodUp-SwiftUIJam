@@ -31,7 +31,7 @@ struct MoodUpApp: App {
     }
     
     private func mockEntries() {
-        for index in -30..<0 {
+        for index in -30..<(-5) {
             let day = Calendar.current.date(byAdding: .day, value: index, to: Date())!
             let moodEntry = MoodEntry(moodType: .excellent, categories: [
                 MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
