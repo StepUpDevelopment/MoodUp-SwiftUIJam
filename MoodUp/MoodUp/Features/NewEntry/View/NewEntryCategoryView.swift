@@ -57,6 +57,9 @@ struct NewEntryCategoryView: View {
                     MainButton(buttonTitle: "save") {
                         viewModel.moodText = self.inputText
                         viewModel.save()
+                        
+                        UINotificationFeedbackGenerator().notificationOccurred(.success)
+                        
                         isShowingNewEntryView = false
                     }
                     .padding()

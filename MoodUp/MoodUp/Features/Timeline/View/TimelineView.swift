@@ -49,6 +49,7 @@ struct TimelineView: View {
                 }
 
                 MainButton(buttonTitle: "add_mood", buttonAction: {
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     self.isShowingNewEntryView = true
                 }).sheet(isPresented: $isShowingNewEntryView) {
                     NewEntryView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)

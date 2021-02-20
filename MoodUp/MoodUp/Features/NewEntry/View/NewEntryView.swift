@@ -51,8 +51,9 @@ struct NewEntryView: View {
 					
                     MainButton(buttonTitle: "continue") {
 						if selectedMood != nil {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 							self.isShowingNewEntryCategoryView = true
-						}
+                        }
 					}
                     .disabled(selectedMood == nil)
                     .padding()
