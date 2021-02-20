@@ -33,7 +33,7 @@ struct NewEntryCategoryView: View {
 struct NewEntryCategoryGridView: View {
     private var columns: [GridItem] = [
             GridItem(.fixed(100), spacing: 16),
-            GridItem(.fixed(50), spacing: 16),
+            GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16)
         ]
     
@@ -56,7 +56,19 @@ struct NewEntryCategoryGridItemView: View {
     var gridIndex: Int
     
     var body: some View {
-        Text("abc \(gridIndex)")
+        VStack {
+            Button(action: {
+                
+            }, label: {
+                VStack {
+                    Image("CategoryHome")
+                        .resizable()
+                        .frame(width: 64.0, height: 64.0)
+                    Text("abc \(gridIndex)")
+                }
+            })
+            .buttonStyle(SelectableButtonStyle(isSelected: false))
+        }
     }
 }
 
