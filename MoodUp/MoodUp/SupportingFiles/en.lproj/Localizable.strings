@@ -6,12 +6,17 @@
   
 */
 
+// General
+"continue" = "Continue";
+"save_mood" = "Save Mood";
+"add_mood" = "Add Mood";
+
+// View Titles
 "timeline" = "Timeline";
 "stats" = "Stats";
 "settings" = "Settings";
 
-"continue" = "Continue";
-
+// Moods
 "awful" = "Awful";
 "bad" = "Bad";
 "meh" = "Meh";
@@ -22,6 +27,4 @@
 
 // New entry
 "new_entry_title" = "How are you feeling?";
-"save_mood" = "Save Mood";
-
-"add_mood" = "Add Mood";
+"new_entry_category_title" = "What is related to your feelings?";

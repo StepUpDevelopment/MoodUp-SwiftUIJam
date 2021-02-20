@@ -15,7 +15,7 @@ struct NewEntryCategoryView: View {
             
             VStack {
                 Spacer()
-                Text("new_entry_title")
+                Text("new_entry_category_title")
                     .font(.title)
                     .padding()
                 Spacer()

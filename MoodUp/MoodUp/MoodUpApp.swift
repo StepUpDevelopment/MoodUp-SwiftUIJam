@@ -12,6 +12,10 @@ struct MoodUpApp: App {
     
     let storageProvider = StorageProvider()
     
+    init() {
+        UINavigationBar.appearance().tintColor = UIColor(Color.primaryForegroundColor)
+    }
+    
     var body: some Scene {
         WindowGroup {
             TabBarView()
