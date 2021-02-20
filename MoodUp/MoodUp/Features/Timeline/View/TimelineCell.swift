@@ -24,27 +24,43 @@ struct TimelineCell: View {
     }
     
     var body: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading) {
-                HStack {
-                    SmileyView(moodType: moodEntry.moodType)
-                        .frame(width: 30, height: 30)
-                    Text(moodEntry.moodType.titleKey)
-                        .font(.headline)
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    HStack {
+                        SmileyView(moodType: moodEntry.moodType)
+                            .frame(width: 30, height: 30)
+                        Text(moodEntry.moodType.titleKey)
+                            .font(.headline)
+                    }
+                    .padding(.bottom, 8)
+                    
+                    HStack {
+                        Image(systemName: "applewatch.watchface")
+                        Text(moodEntry.createdDate.relativeOrMediumString())
+                            .fontWeight(.light)
+                    }
                 }
-                Text(moodEntry.createdDate.relativeOrMediumString())
-                    .fontWeight(.light)
+                
+                Spacer()
+                
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .trailing,
+                    spacing: 8
+                ) {
+                    ForEach(moodEntry.categories) { category in
+                        Image(category.iconName)
+                    }
+                }
             }
             
-            Spacer()
-            
-            LazyVGrid(
-                columns: columns,
-                alignment: .trailing,
-                spacing: 8
-            ) {
-                ForEach(moodEntry.categories) { category in
-                    Image(category.iconName)
+            if let moodText = moodEntry.text {
+                HStack {
+                    Image(systemName: "pencil.tip")
+                    Text(moodText)
+                        .fontWeight(.light)
+                        .lineLimit(1)
                 }
             }
         }
@@ -63,7 +79,7 @@ struct TimelineCell_Previews: PreviewProvider {
             MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
             MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney"),
             MoodCategory(identifier: 3, title: "category_friends", iconName: "CategoryFriends")
-        ])
+        ], text: "Feeling good")
         return TimelineCell(moodEntry: moodEntry)
             .previewLayout(.sizeThatFits)
             .padding()

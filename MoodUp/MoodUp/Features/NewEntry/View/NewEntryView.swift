@@ -26,6 +26,7 @@ struct NewEntryView: View {
                 VStack {
                     Spacer()
                     Text("new_entry_title")
+                        .foregroundColor(.primaryForegroundColor)
                         .font(.title)
                         .padding()
                     HStack {

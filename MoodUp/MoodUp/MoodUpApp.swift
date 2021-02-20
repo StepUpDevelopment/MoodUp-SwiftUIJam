@@ -14,7 +14,8 @@ struct MoodUpApp: App {
     
     init() {
         CategoryImporter().execute()
-        UINavigationBar.appearance().tintColor = UIColor(Color.primaryForegroundColor)
+        
+        setupAppStyles()
 //        mockEntries()
     }
 
@@ -22,6 +23,11 @@ struct MoodUpApp: App {
         WindowGroup {
             TabBarView(storageProvider: storageProvider)
         }
+    }
+    
+    private func setupAppStyles() {
+        UINavigationBar.appearance().tintColor = UIColor(Color.primaryForegroundColor)
+        UITextView.appearance().backgroundColor = .clear
     }
     
     private func mockEntries() {
