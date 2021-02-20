@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TimelineView: View {
+    @State private var isShowingNewEntryView = false
+    
     var body: some View {
 		ZStack {
 			LinearGradient.main
@@ -16,10 +18,13 @@ struct TimelineView: View {
                 Text("Hello, world!")
                     .padding()
 
-                MainButton(buttonTitle: "add_mood", buttonAction: { print("test")})
+                MainButton(buttonTitle: "add_mood", buttonAction: {
+                    self.isShowingNewEntryView = true
+                }).sheet(isPresented: $isShowingNewEntryView) {
+                        NewEntryView()
+                }
             }
 		}
-			
     }
 }
 
