@@ -35,7 +35,7 @@ struct NewEntryCategoryView: View {
 struct NewEntryCategoryGridView: View {
     @ObservedObject var entryViewModel: NewEntryCategoryViewModel
     
-    public var columns: [GridItem] = [
+    var columns: [GridItem] = [
             GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16)
