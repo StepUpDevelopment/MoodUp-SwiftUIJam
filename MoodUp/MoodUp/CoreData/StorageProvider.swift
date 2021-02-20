@@ -77,8 +77,12 @@ class StorageProvider {
 extension StorageProvider {
     
     func saveEntry(moodEntry: MoodEntry) {
-        let _ = moodEntry.coreDataModel(context: persistentContainer.viewContext)
-
+        let dbMoodEntry = moodEntry.coreDataModel(context: persistentContainer.viewContext)
+		dbMoodEntry.categories =
+			NSSet(array:
+					moodEntry.categories.compactMap { category(forIdentifier: $0.identifier) }
+			)
+		
         do {
             try persistentContainer.viewContext.save()
             print("Mood entry saved succesfully")

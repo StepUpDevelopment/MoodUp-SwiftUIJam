@@ -69,8 +69,7 @@ struct TimelineCell: View {
                 spacing: 8
             ) {
                 ForEach(moodEntry.categories) { category in
-//                    Image(category.iconName)
-                    Text("Category")
+					Image(category.iconName)
                 }
             }
         }
