@@ -21,6 +21,8 @@
 		345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */; };
 		345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */; };
 		345E03C725E175520044F18A /* View+CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E03C625E175520044F18A /* View+CardView.swift */; };
+		345E03D325E18EF00044F18A /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E03D225E18EF00044F18A /* TimelineCell.swift */; };
+		345E03D925E1920F0044F18A /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E03D825E1920F0044F18A /* Date+Formatting.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
 		34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* TimelineView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingWeekView.swift; sourceTree = "<group>"; };
 		345E03C625E175520044F18A /* View+CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CardView.swift"; sourceTree = "<group>"; };
+		345E03D225E18EF00044F18A /* TimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		345E03D825E1920F0044F18A /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
 		34B3ACE825DFF5750048DD72 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		0AB08DCD25E03A3F0004B4B5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				345E03D725E192050044F18A /* Date */,
 				345E03C425E175380044F18A /* SwiftUI */,
 				0AC5297125E1310100B3042F /* NSManagedObject+Name.swift */,
 				0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */,
@@ -185,6 +190,14 @@
 				345E03C625E175520044F18A /* View+CardView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		345E03D725E192050044F18A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				345E03D825E1920F0044F18A /* Date+Formatting.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		34B3ACDA25DFF5750048DD72 = {
@@ -313,6 +326,7 @@
 			children = (
 				34B3ACE825DFF5750048DD72 /* TimelineView.swift */,
 				345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */,
+				345E03D225E18EF00044F18A /* TimelineCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +508,7 @@
 				345E03C725E175520044F18A /* View+CardView.swift in Sources */,
 				0AC5295325E116A600B3042F /* CategoryImporter.swift in Sources */,
 				A401B30525E05EB80061CAFD /* MainButton.swift in Sources */,
+				345E03D925E1920F0044F18A /* Date+Formatting.swift in Sources */,
 				345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */,
 				A428042325E066200013D161 /* StatsView.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
@@ -510,6 +525,7 @@
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
 				A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */,
 				34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */,
+				345E03D325E18EF00044F18A /* TimelineCell.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 				A401B30625E05EB80061CAFD /* SmileyView.swift in Sources */,
 			);
@@ -696,9 +712,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodUp/Preview Content\"";
-				DEVELOPMENT_TEAM = 8XT4U75J9G;
+				DEVELOPMENT_TEAM = 55N9D27866;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MoodUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -708,6 +725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -718,9 +736,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodUp/Preview Content\"";
-				DEVELOPMENT_TEAM = 8XT4U75J9G;
+				DEVELOPMENT_TEAM = 55N9D27866;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MoodUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -730,6 +749,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

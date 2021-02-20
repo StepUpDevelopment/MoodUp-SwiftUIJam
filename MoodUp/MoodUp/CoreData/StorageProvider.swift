@@ -19,18 +19,13 @@ class StorageProvider {
         let result = StorageProvider(inMemory: true)
         let viewContext = result.persistentContainer.viewContext
         let moodEntry = MoodEntry(moodType: .excellent, categories: [
-                                    MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
-            MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney")
+            MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
+            MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney"),
+            MoodCategory(identifier: 3, title: "category_friends", iconName: "CategoryFriends")
         ])
-        let _ = moodEntry.coreDataModel(context: viewContext)
+        result.saveEntry(moodEntry: moodEntry)
         let secondMoodEntry = MoodEntry(moodType: .bad, categories: [MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney")])
-        let _ = secondMoodEntry.coreDataModel(context: viewContext)
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        result.saveEntry(moodEntry: secondMoodEntry)
         return result
     }()
 
