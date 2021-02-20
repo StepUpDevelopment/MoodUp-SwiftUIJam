@@ -41,7 +41,7 @@ extension Date {
         let secondsPerDay = 3600 * 24
         
         let difference = self.distance(to: currentDate)
-        if Int(difference) / secondsPerDay > 3 {
+        if Int(difference) / secondsPerDay != 0 {
             return timeString(locale: locale)
         } else {
             let dateFormatter = RelativeDateTimeFormatter()
