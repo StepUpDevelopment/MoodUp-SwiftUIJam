@@ -11,7 +11,6 @@ struct NewEntryCategoryView: View {
 
 	@ObservedObject var viewModel: NewEntryCategoryViewModel
 
-
     var body: some View {
         ZStack {
             LinearGradient.main
@@ -25,7 +24,7 @@ struct NewEntryCategoryView: View {
                 Text("new_entry_category_title")
                     .font(.title)
                     .padding()
-                NewEntryCategoryGridView()
+                NewEntryCategoryGridView(viewModel2: viewModel)
                 Spacer()
                 MainButton(buttonTitle: "save_mood") {
                     print("Save Mood")
@@ -37,6 +36,8 @@ struct NewEntryCategoryView: View {
 }
 
 struct NewEntryCategoryGridView: View {
+    @ObservedObject var viewModel2: NewEntryCategoryViewModel
+    
     private var columns: [GridItem] = [
             GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16),

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class NewEntryCategoryViewModel : ObservableObject {
 	
-	@Published var moodCategories: [MoodCategory]
+	@Published var moodCategories: [MoodCategory] = []
 	
 	private var moodType: MoodType
 	
