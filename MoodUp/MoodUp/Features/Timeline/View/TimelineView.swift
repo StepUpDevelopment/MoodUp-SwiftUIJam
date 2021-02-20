@@ -13,7 +13,7 @@ struct TimelineView: View {
 
     @State private var isShowingNewEntryView = false
     
-    @State private var scrollTarget: MoodEntry?
+    @State private var scrollTarget: ListSection<MoodEntry>?
 
     var body: some View {
 		ZStack {
@@ -27,22 +27,24 @@ struct TimelineView: View {
                 .frame(height: 80)
 
                 ScrollView {
-                    LazyVStack {
-						ForEach(viewModel.sections) { section in
-							Text(section.title)
-							ForEach(section.items, id: \.self) { moodEntry in
-								TimelineCell(moodEntry: moodEntry)
+					ScrollViewReader { reader in
+						LazyVStack {
+							ForEach(viewModel.sections, id: \.self) { section in
+								Text(section.title)
+								ForEach(section.items, id: \.self) { moodEntry in
+									TimelineCell(moodEntry: moodEntry)
+								}
 							}
 						}
-                    }
-                    .onChange(of: scrollTarget) { value in
-                        if let targetEntry = scrollTarget {
-                            scrollTarget = nil
-                            withAnimation {
-                                reader.scrollTo(targetEntry, anchor: .top)
-                            }
-                        }
-                    }
+						.onChange(of: scrollTarget) { value in
+							if let targetEntry = scrollTarget {
+								scrollTarget = nil
+								withAnimation {
+									reader.scrollTo(targetEntry, anchor: .top)
+								}
+							}
+						}
+					}
                 }
 
                 MainButton(buttonTitle: "add_mood", buttonAction: {
@@ -57,9 +59,10 @@ struct TimelineView: View {
 
     private func handleDaySelected(dayItem: DayItem) {
         let selectedDate = Date(timeIntervalSince1970: dayItem.timestamp)
-        let firstEntry = viewModel.moodEntries.last { moodEntry in
+		//TODO: Spinni help first Entry ist kein Mood Entry mehr sonder Sections
+		let firstEntry = viewModel.sections.first { section in
             let calendar = Calendar.current
-            let entryDateComponents = calendar.dateComponents([.day, .month, .year], from: moodEntry.createdDate)
+			let entryDateComponents = calendar.dateComponents([.day, .month, .year], from: section.items.first?.createdDate ?? Date())
             let selectedDateComponents = calendar.dateComponents([.day, .month, .year], from: selectedDate)
             guard let entryDay = entryDateComponents.day,
                   let entryMonth = entryDateComponents.month,
