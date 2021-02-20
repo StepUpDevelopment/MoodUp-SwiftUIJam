@@ -63,7 +63,9 @@ class StorageProvider {
 		if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
 
 			if let castedInserts = inserts as? Set<DbMoodEntry> {
-				moodEntryPublisher.send(Array(castedInserts).map {$0.moodEntry()})
+				moodEntryPublisher.send(
+					Array(castedInserts).map { $0.moodEntry() }
+				)
 			}
 		}
 	}
