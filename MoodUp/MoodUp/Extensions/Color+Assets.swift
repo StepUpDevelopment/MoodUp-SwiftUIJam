@@ -19,6 +19,7 @@ extension Color {
 	static let excellentMood = Color("ExcellentMood")
     
 	static let primaryForegroundColor = Color("PrimaryForegroundColor")
+	static let primaryForegroundColorInactive = Color("PrimaryForegroundColorInactive")
 	
 	static let mainGradientBottom = Color("MainGradientBottom")
 	static let mainGradientTop = Color("MainGradientTop")

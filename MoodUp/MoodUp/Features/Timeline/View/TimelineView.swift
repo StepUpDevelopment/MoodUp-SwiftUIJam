@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimelineView: View {
     @State private var isShowingNewEntryView = false
+	var storageProvider: StorageProvider
     
     var body: some View {
 		ZStack {
@@ -21,7 +22,7 @@ struct TimelineView: View {
                 MainButton(buttonTitle: "add_mood", buttonAction: {
                     self.isShowingNewEntryView = true
                 }).sheet(isPresented: $isShowingNewEntryView) {
-                        NewEntryView()
+                        NewEntryView(storageProvider: storageProvider)
                 }
             }
 		}
@@ -30,6 +31,6 @@ struct TimelineView: View {
 
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineView()
+        TimelineView(storageProvider: StorageProvider(inMemory: true))
     }
 }

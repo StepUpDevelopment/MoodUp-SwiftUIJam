@@ -14,3 +14,9 @@ struct MoodCategory : Codable {
     var iconName: String
 	
 }
+
+extension MoodCategory : Identifiable {
+	var id: Int {
+		identifier
+	}		
+}
