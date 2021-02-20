@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct TabBarView: View {
+
     @State private var selectedTab = Tab.timeline
 	var storageProvider: StorageProvider
-    
+
     enum Tab: Int {
         case timeline, stats, settings
     }
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            TimelineView(storageProvider: storageProvider).tabItem {
+            TimelineView(viewModel: TimelineViewModel(storageProvider: storageProvider)).tabItem {
                 TabItem(title: "timeline", systemImage: "house.fill")
             }.tag(Tab.timeline)
             StatsView().tabItem {

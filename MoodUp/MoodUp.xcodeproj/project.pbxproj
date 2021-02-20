@@ -18,6 +18,8 @@
 		0AC5297E25E13F5F00B3042F /* SHA256Digest+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */; };
 		0AC5298625E1421000B3042F /* NewEntryCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5298525E1421000B3042F /* NewEntryCategoryViewModel.swift */; };
 		345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
+		345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */; };
+		345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
 		34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* TimelineView.swift */; };
 		34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SHA256Digest+String.swift"; sourceTree = "<group>"; };
 		0AC5298525E1421000B3042F /* NewEntryCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryCategoryViewModel.swift; sourceTree = "<group>"; };
 		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
+		345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
+		345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingWeekView.swift; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
 		34B3ACE825DFF5750048DD72 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		345ADB6625E129D400B7AE24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		34B3ACDA25DFF5750048DD72 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +245,7 @@
 		34B3ACF825E02EC60048DD72 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				345ADB6625E129D400B7AE24 /* ViewModel */,
 				34B3AD2425E051F30048DD72 /* View */,
 			);
 			path = Timeline;
@@ -288,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				34B3ACE825DFF5750048DD72 /* TimelineView.swift */,
+				345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,10 +482,12 @@
 				0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */,
 				0AC5295325E116A600B3042F /* CategoryImporter.swift in Sources */,
 				A401B30525E05EB80061CAFD /* MainButton.swift in Sources */,
+				345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */,
 				A428042325E066200013D161 /* StatsView.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
 				0AC5297E25E13F5F00B3042F /* SHA256Digest+String.swift in Sources */,
 				0AC5298625E1421000B3042F /* NewEntryCategoryViewModel.swift in Sources */,
+				345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */,
 				0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */,
 				34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */,
 				0AC5297225E1310100B3042F /* NSManagedObject+Name.swift in Sources */,

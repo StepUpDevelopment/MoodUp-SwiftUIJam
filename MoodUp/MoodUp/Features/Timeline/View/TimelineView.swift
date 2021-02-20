@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct TimelineView: View {
+
+    @ObservedObject var viewModel: TimelineViewModel
+
     @State private var isShowingNewEntryView = false
-	var storageProvider: StorageProvider
-    
+
     var body: some View {
 		ZStack {
 			LinearGradient.main
 				.ignoresSafeArea()
-            VStack {
-                Text("Hello, world!")
-                    .padding()
 
+            VStack {
+                ScrollingWeekView()
+                    .frame(height: 80)
+
+
+                Spacer()
                 MainButton(buttonTitle: "add_mood", buttonAction: {
                     self.isShowingNewEntryView = true
                 }).sheet(isPresented: $isShowingNewEntryView) {
-                        NewEntryView(storageProvider: storageProvider)
+                    NewEntryView(storageProvider: viewModel.storageProvider)
                 }
+                .padding()
             }
 		}
     }
@@ -31,6 +37,6 @@ struct TimelineView: View {
 
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
-        TimelineView(storageProvider: StorageProvider(inMemory: true))
+        TimelineView(viewModel: TimelineViewModel(storageProvider: .previewProvider))
     }
 }
