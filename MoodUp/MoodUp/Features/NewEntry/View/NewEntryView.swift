@@ -8,39 +8,42 @@
 import SwiftUI
 
 struct NewEntryView: View {
-    
+    @State private var isShowingNewEntryCategoryView = false
     @State private var selectedMood: MoodType?
     
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-            
-            VStack {
-                Spacer()
-                Text("new_entry_title")
-                    .font(.title)
+        NavigationView {
+            ZStack {
+                LinearGradient.main
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Spacer()
+                    Text("new_entry_title")
+                        .font(.title)
+                        .padding()
+                    HStack {
+                        moodButton(moodType: .awful, title: "awful")
+                        moodButton(moodType: .bad, title: "bad")
+                    }
+                    HStack {
+                        moodButton(moodType: .meh, title: "meh")
+                        moodButton(moodType: .okay, title: "okay")
+                        moodButton(moodType: .good, title: "good")
+                    }
+                    HStack {
+                        moodButton(moodType: .great, title: "great")
+                        moodButton(moodType: .excellent, title: "excellent")
+                    }
+                    Spacer()
+                    NavigationLink(destination: NewEntryCategoryView(), isActive: $isShowingNewEntryCategoryView) {}
+                    MainButton(buttonTitle: "continue") {
+                        self.isShowingNewEntryCategoryView = true
+                    }
                     .padding()
-                HStack {
-                    moodButton(moodType: .awful, title: "awful")
-                    moodButton(moodType: .bad, title: "bad")
                 }
-                HStack {
-                    moodButton(moodType: .meh, title: "meh")
-                    moodButton(moodType: .okay, title: "okay")
-                    moodButton(moodType: .good, title: "good")
-                }
-                HStack {
-                    moodButton(moodType: .great, title: "great")
-                    moodButton(moodType: .excellent, title: "excellent")
-                }
-                Spacer()
-                MainButton(buttonTitle: "continue") {
-                    print("Show Categories")
-                }
-                .padding()
             }
-        }
+        }.navigationBarHidden(true)
     }
     
     private func moodButton(moodType: MoodType,

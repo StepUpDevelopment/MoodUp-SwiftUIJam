@@ -28,6 +28,7 @@
 		A401B30625E05EB80061CAFD /* SmileyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401B30425E05EB80061CAFD /* SmileyView.swift */; };
 		A428041D25E065D50013D161 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428041C25E065D50013D161 /* SettingsView.swift */; };
 		A428042325E066200013D161 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428042225E066200013D161 /* StatsView.swift */; };
+		A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428042825E12BCC0013D161 /* NewEntryCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		A401B30425E05EB80061CAFD /* SmileyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileyView.swift; sourceTree = "<group>"; };
 		A428041C25E065D50013D161 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A428042225E066200013D161 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		A428042825E12BCC0013D161 /* NewEntryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				34B3AD2925E058AC0048DD72 /* NewEntryView.swift */,
+				A428042825E12BCC0013D161 /* NewEntryCategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
 				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
+				A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */,
 				34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 				A401B30625E05EB80061CAFD /* SmileyView.swift in Sources */,
