@@ -64,18 +64,18 @@ extension StorageProvider {
         }
     }
 	
-	func saveCategory(categoryJsonModel: CategoryJsonModel) {
+	func saveCategory(moodCategory: MoodCategory) {
 		
 
-		let category = self.category(forIdentifier: categoryJsonModel.identifier) ??
+		let category = self.category(forIdentifier: moodCategory.identifier) ??
 			DbMoodCategory(
 				entity: NSEntityDescription.entity(forEntityName: DbMoodCategory.className,
 												   in: persistentContainer.viewContext)!,
 				insertInto: persistentContainer.viewContext)
 				
-		category.identifier = Int64(categoryJsonModel.identifier)
-		category.title = categoryJsonModel.title
-		category.iconName = categoryJsonModel.iconName
+		category.identifier = Int64(moodCategory.identifier)
+		category.title = moodCategory.title
+		category.iconName = moodCategory.iconName
 		
 		do {
 			try persistentContainer.viewContext.save()

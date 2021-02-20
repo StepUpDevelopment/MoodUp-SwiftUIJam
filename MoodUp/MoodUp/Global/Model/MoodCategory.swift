@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoodCategory {
+struct MoodCategory : Codable {
     
 	var identifier: Int
     var title: String

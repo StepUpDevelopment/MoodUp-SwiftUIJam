@@ -50,11 +50,11 @@ class CategoryImporter {
 		return try? Data(contentsOf: url)
 	}
 	
-	private func parseImportJson(data: Data) -> [CategoryJsonModel] {
+	private func parseImportJson(data: Data) -> [MoodCategory] {
 							
-		var categoryJsonModel: [CategoryJsonModel]?
+		var categoryJsonModel: [MoodCategory]?
 		do {
-			categoryJsonModel = try JSONDecoder().decode([CategoryJsonModel].self, from: data)
+			categoryJsonModel = try JSONDecoder().decode([MoodCategory].self, from: data)
 		} catch {
 			print("Could not parse json")
 		}
@@ -62,15 +62,9 @@ class CategoryImporter {
 		
 	}
 			
-	private func importCategories(_ categories: [CategoryJsonModel]) {
+	private func importCategories(_ categories: [MoodCategory]) {
 		categories.forEach { model in
-			storageProvider.saveCategory(categoryJsonModel: model)
+			storageProvider.saveCategory(moodCategory: model)
 		}
-	}
-}
-
-extension SHA256Digest {
-	var hashString: String {
-		compactMap { String(format: "%02x", $0) }.joined()
 	}
 }

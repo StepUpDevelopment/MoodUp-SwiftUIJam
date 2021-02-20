@@ -10,12 +10,12 @@
 		0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */; };
 		0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */; };
 		0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */; };
-		0AC5295025E115AA00B3042F /* CategoryJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5294F25E115AA00B3042F /* CategoryJsonModel.swift */; };
 		0AC5295325E116A600B3042F /* CategoryImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5295225E116A600B3042F /* CategoryImporter.swift */; };
 		0AC5295525E1186600B3042F /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5294D25E1151300B3042F /* Categories.json */; };
 		0AC5295E25E11C5700B3042F /* MoodUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5295D25E11C5700B3042F /* MoodUpTests.swift */; };
 		0AC5296A25E11D4800B3042F /* CategoryJsonModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5296925E11D4800B3042F /* CategoryJsonModelTests.swift */; };
 		0AC5297225E1310100B3042F /* NSManagedObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5297125E1310100B3042F /* NSManagedObject+Name.swift */; };
+		0AC5297E25E13F5F00B3042F /* SHA256Digest+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */; };
 		345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
 		34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */; };
 		34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3ACE825DFF5750048DD72 /* TimelineView.swift */; };
@@ -52,15 +52,15 @@
 		0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Assets.swift"; sourceTree = "<group>"; };
 		0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Assets.swift"; sourceTree = "<group>"; };
 		0AC5294325E0563000B3042F /* SmileyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyView.swift; sourceTree = "<group>"; };
-		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		0AC5294D25E1151300B3042F /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
-		0AC5294F25E115AA00B3042F /* CategoryJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryJsonModel.swift; sourceTree = "<group>"; };
 		0AC5295225E116A600B3042F /* CategoryImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryImporter.swift; sourceTree = "<group>"; };
 		0AC5295B25E11C5700B3042F /* MoodUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC5295D25E11C5700B3042F /* MoodUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpTests.swift; sourceTree = "<group>"; };
 		0AC5295F25E11C5700B3042F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC5296925E11D4800B3042F /* CategoryJsonModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryJsonModelTests.swift; sourceTree = "<group>"; };
 		0AC5297125E1310100B3042F /* NSManagedObject+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Name.swift"; sourceTree = "<group>"; };
+		0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SHA256Digest+String.swift"; sourceTree = "<group>"; };
+		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		34B3ACE325DFF5750048DD72 /* MoodUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B3ACE625DFF5750048DD72 /* MoodUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpApp.swift; sourceTree = "<group>"; };
 		34B3ACE825DFF5750048DD72 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 				0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */,
 				0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */,
 				0AC5297125E1310100B3042F /* NSManagedObject+Name.swift */,
+				0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,7 +123,6 @@
 		0AC5294E25E1158E00B3042F /* CategoryImport */ = {
 			isa = PBXGroup;
 			children = (
-				0AC5294F25E115AA00B3042F /* CategoryJsonModel.swift */,
 				0AC5295225E116A600B3042F /* CategoryImporter.swift */,
 			);
 			path = CategoryImport;
@@ -459,10 +459,10 @@
 				A401B30525E05EB80061CAFD /* MainButton.swift in Sources */,
 				A428042325E066200013D161 /* StatsView.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
+				0AC5297E25E13F5F00B3042F /* SHA256Digest+String.swift in Sources */,
 				0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */,
 				34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */,
 				0AC5297225E1310100B3042F /* NSManagedObject+Name.swift in Sources */,
-				0AC5295025E115AA00B3042F /* CategoryJsonModel.swift in Sources */,
 				0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */,
 				34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */,
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
