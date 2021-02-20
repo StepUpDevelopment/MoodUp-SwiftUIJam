@@ -66,16 +66,6 @@ class StorageProvider {
 				moodEntryPublisher.send(Array(castedInserts).map {$0.moodEntry()})
 			}
 		}
-
-
-		//TODO: Maybe used later on
-		if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
-
-		}
-
-		if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
-
-		}
 	}
 }
 
