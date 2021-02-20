@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewEntryView: View {
     
-    @State var selectedMoods: Set<MoodType> = []
+    @State var selectedMood: MoodType?
     
     var body: some View {
         ZStack {
@@ -22,40 +22,38 @@ struct NewEntryView: View {
                     .font(.title)
                     .padding()
                 HStack {
-                    moodButton(moodType: .awful, title: "Awful")
-                    moodButton(moodType: .bad, title: "Bad")
+                    moodButton(moodType: .awful, title: "awful")
+                    moodButton(moodType: .bad, title: "bad")
                 }
                 HStack {
-                    moodButton(moodType: .meh, title: "Meh")
-                    moodButton(moodType: .okay, title: "Okay")
-                    moodButton(moodType: .good, title: "Good")
+                    moodButton(moodType: .meh, title: "meh")
+                    moodButton(moodType: .okay, title: "okay")
+                    moodButton(moodType: .good, title: "good")
                 }
                 HStack {
-                    moodButton(moodType: .great, title: "Great")
-                    moodButton(moodType: .excellent, title: "Excellent")
+                    moodButton(moodType: .great, title: "great")
+                    moodButton(moodType: .excellent, title: "excellent")
                 }
                 Spacer()
                 MainButton(buttonTitle: "continue") {
                     print("Show Categories")
                 }
+                .padding()
             }
         }
     }
     
-    private func moodButton(moodType: MoodType, title: String) -> some View {
+    private func moodButton(moodType: MoodType,
+                            title: LocalizedStringKey) -> some View {
         Button(action: {
-            if selectedMoods.contains(moodType) {
-                selectedMoods.remove(moodType)
-            } else {
-                selectedMoods.insert(moodType)
-            }
+            selectedMood = moodType
         }, label: {
             VStack {
                 SmileyView(moodType: moodType)
                 Text(title)
             }
         })
-        .buttonStyle(SelectableButtonStyle(isSelected: selectedMoods.contains(moodType)))
+        .buttonStyle(SelectableButtonStyle(isSelected: moodType == selectedMood))
     }
 }
 
