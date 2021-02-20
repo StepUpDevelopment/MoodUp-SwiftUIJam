@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewEntryView: View {
     
-    @State var selectedMood: MoodType?
+    @State private var selectedMood: MoodType?
     
     var body: some View {
         ZStack {
