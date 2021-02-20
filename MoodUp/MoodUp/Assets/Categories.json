@@ -1,0 +1,37 @@
+[
+  {
+	"identifier": 1,
+	"title": "Family",
+	"iconName": "CategoryFamily"
+  },
+  {
+	"identifier": 2,
+	"title": "Food",
+	"iconName": "CategoryFood"
+  },
+  {
+	"identifier": 3,
+	"title": "Friends",
+	"iconName": "CategoryFriends"
+  },
+  {
+	"identifier": 4,
+	"title": "Home",
+	"iconName": "CategoryHome"
+  },
+  {
+	"identifier": 5,
+	"title": "Money",
+	"iconName": "CategoryMoney"
+  },
+  {
+	"identifier": 6,
+	"title": "Relationship",
+	"iconName": "CategoryRelationship"
+  },
+  {
+	"identifier": 7,
+	"title": "Work",
+	"iconName": "CategoryWork"
+  }
+]
