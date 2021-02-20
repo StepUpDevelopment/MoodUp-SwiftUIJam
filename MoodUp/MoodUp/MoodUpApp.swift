@@ -11,11 +11,12 @@ import SwiftUI
 struct MoodUpApp: App {
     
     let storageProvider = StorageProvider()
-	
     
-	init() {
-		CategoryImporter().execute()
-	}
+    init() {
+        CategoryImporter().execute()
+        UINavigationBar.appearance().tintColor = UIColor(Color.primaryForegroundColor)
+    }
+
     var body: some Scene {
         WindowGroup {
             TabBarView()

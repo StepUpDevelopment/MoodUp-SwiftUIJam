@@ -8,57 +8,58 @@
 import SwiftUI
 
 struct NewEntryView: View {
+    @State private var isShowingNewEntryCategoryView = false
+    @State private var selectedMood: MoodType?
+    
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("new_entry_title")
-                    .font(.title)
+        NavigationView {
+            ZStack {
+                LinearGradient.main
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Spacer()
+                    Text("new_entry_title")
+                        .font(.title)
+                        .padding()
+                    HStack {
+                        moodButton(moodType: .awful, title: "awful")
+                        moodButton(moodType: .bad, title: "bad")
+                    }
+                    HStack {
+                        moodButton(moodType: .meh, title: "meh")
+                        moodButton(moodType: .okay, title: "okay")
+                        moodButton(moodType: .good, title: "good")
+                    }
+                    HStack {
+                        moodButton(moodType: .great, title: "great")
+                        moodButton(moodType: .excellent, title: "excellent")
+                    }
+                    Spacer()
+                    NavigationLink(destination: NewEntryCategoryView(), isActive: $isShowingNewEntryCategoryView) {}
+                    MainButton(buttonTitle: "continue") {
+                        self.isShowingNewEntryCategoryView = true
+                    }
                     .padding()
-                HStack {
-                    moodButton(moodType: .awful, title: "Awful")
-                    moodButton(moodType: .bad, title: "Bad")
-                }
-                HStack {
-                    moodButton(moodType: .meh, title: "Meh")
-                    moodButton(moodType: .okay, title: "Okay")
-                    moodButton(moodType: .good, title: "Good")
-                }
-                HStack {
-                    moodButton(moodType: .great, title: "Great")
-                    moodButton(moodType: .excellent, title: "Excellent")
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
     
-    private func moodButton(moodType: MoodType, title: String) -> some View {
+    private func moodButton(moodType: MoodType,
+                            title: LocalizedStringKey) -> some View {
         Button(action: {
-            print("aassd")
+            selectedMood = moodType
         }, label: {
             VStack {
                 SmileyView(moodType: moodType)
                 Text(title)
-                    .foregroundColor(.primaryForegroundColor)
             }
         })
-        .buttonStyle(SelectableButtonStyle())
+        .buttonStyle(SelectableButtonStyle(isSelected: moodType == selectedMood))
     }
 }
 
-struct SelectableButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration
-            .label
-            .foregroundColor(configuration.isPressed ? .gray : .white)
-            .padding()
-            .background(Color.selectableButtonBackground)
-            .cornerRadius(8)
-            .frame(width: 100, height: 120)
-    }
-}
 struct NewEntryView_Previews: PreviewProvider {
     static var previews: some View {
         NewEntryView()
