@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoodEntry {
+struct MoodEntry: Hashable {
     
     var moodType: MoodType
     var categories: [MoodCategory] = []

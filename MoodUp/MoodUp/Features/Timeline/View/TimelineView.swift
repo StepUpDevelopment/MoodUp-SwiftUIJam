@@ -13,9 +13,6 @@ struct TimelineView: View {
 
     @State private var isShowingNewEntryView = false
     
-    //TODO remove me
-    @State private var entries = StorageProvider().getAllEntries()
-
     var body: some View {
 		ZStack {
 			LinearGradient.main
@@ -25,11 +22,12 @@ struct TimelineView: View {
                 ScrollingWeekView()
                     .frame(height: 80)
 
-
-                Spacer()
-                ForEach(0 ..< entries.count) { index in
-                    let currentEntry = entries[index]
-                    currentEntry.moodType.icon
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.moodEntries, id: \.self) { moodEntry in
+                            TimelineCell(moodEntry: moodEntry)
+                        }
+                    }
                 }
 
                 MainButton(buttonTitle: "add_mood", buttonAction: {
@@ -41,6 +39,21 @@ struct TimelineView: View {
             }
 		}
     }
+}
+
+struct TimelineCell: View {
+    
+    var moodEntry: MoodEntry
+    
+    var body: some View {
+        Text(moodEntry.moodType.titleKey)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.selectableButtonBackground)
+            .embedInCardView()
+            .padding([.top, .leading, .trailing])
+    }
+    
 }
 
 struct TimelineView_Previews: PreviewProvider {

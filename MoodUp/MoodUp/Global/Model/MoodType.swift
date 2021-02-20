@@ -42,4 +42,23 @@ extension MoodType {
 			return .excellentMood
 		}
 	}
+    
+    var titleKey: LocalizedStringKey {
+        switch self {
+        case .awful:
+            return "awful"
+        case .bad:
+            return "bad"
+        case .meh:
+            return "meh"
+        case .okay:
+            return "okay"
+        case .good:
+            return "good"
+        case .great:
+            return "great"
+        case .excellent:
+            return "excellent"
+        }
+    }
 }

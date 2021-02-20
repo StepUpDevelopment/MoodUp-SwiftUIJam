@@ -15,6 +15,10 @@ class StorageProvider {
     static var previewProvider: StorageProvider = {
         let result = StorageProvider(inMemory: true)
         let viewContext = result.persistentContainer.viewContext
+        let moodEntry = MoodEntry(moodType: .excellent, categories: [MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily")])
+        let _ = moodEntry.coreDataModel(context: viewContext)
+        let secondMoodEntry = MoodEntry(moodType: .bad, categories: [MoodCategory(identifier: 1, title: "category_money", iconName: "CategoryMoney")])
+        let _ = secondMoodEntry.coreDataModel(context: viewContext)
         do {
             try viewContext.save()
         } catch {

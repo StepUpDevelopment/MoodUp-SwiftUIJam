@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoodCategory : Codable {
+struct MoodCategory: Codable {
     
 	var identifier: Int
     var title: String
@@ -15,13 +15,13 @@ struct MoodCategory : Codable {
 	
 }
 
-extension MoodCategory : Identifiable {
+extension MoodCategory: Identifiable {
 	var id: Int {
 		identifier
 	}		
 }
 
-extension MoodCategory : Equatable {
+extension MoodCategory: Hashable {
    
 }
 
