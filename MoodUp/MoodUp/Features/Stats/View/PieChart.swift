@@ -31,7 +31,6 @@ struct PieChart : View {
 				}
 			}
 			.aspectRatio(1, contentMode: .fill)
-			.background(Color.green)
 		}
 	}
 
@@ -68,7 +67,7 @@ struct TmpAngle : Hashable {
 }
 
 struct PieChart_Previews: PreviewProvider {
-	static var previews: some View {		
+	static var previews: some View {
 		PieChart(values: [
 			MoodTypeValue(type: .bad, value: 10),
 			MoodTypeValue(type: .awful, value: 5),
