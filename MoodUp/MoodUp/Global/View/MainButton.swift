@@ -18,24 +18,38 @@ struct MainButton: View {
         }, label: {
             Text(buttonTitle)
 		})
-        .buttonStyle(MainButtonStyle(enabled: enabled))
+        .buttonStyle(MainButtonStyle())
         .cornerRadius(24.0)
     }
 }
 
 struct MainButtonStyle: ButtonStyle {
-	
-	var enabled = true
-	
+
     func makeBody(configuration: Self.Configuration) -> some View {
-		configuration.label
-			.font(.headline)
-			.padding([.leading, .trailing], 48.0)
-			.padding([.top, .bottom], 16.0)
-			.foregroundColor(configuration.isPressed ? Color.white.opacity(0.5) : Color.white)
-			.background(enabled ? Color.primaryForegroundColor : Color.primaryForegroundColorInactive)
-			
-		}
+		MainButtonContent(configuration: configuration)
+    }
+    
+    private struct MainButtonContent: View {
+        let configuration: ButtonStyle.Configuration
+        @Environment(\.colorScheme) var colorScheme
+        @Environment(\.isEnabled) var isEnabled
+        var body: some View {
+            configuration.label
+                .font(.headline)
+                .padding([.leading, .trailing], 48.0)
+                .padding([.top, .bottom], 16.0)
+                .foregroundColor(foreground())
+                .background(isEnabled ? Color.primaryButtonForeground : Color.primaryForegroundColorInactive)
+        }
+        
+        private func foreground() -> Color {
+            if !isEnabled {
+                return Color.gray
+            } else {
+                return configuration.isPressed ? Color.white.opacity(0.5) : Color.white
+            }
+        }
+    }
 }
 
 struct MainButton_Previews: PreviewProvider {

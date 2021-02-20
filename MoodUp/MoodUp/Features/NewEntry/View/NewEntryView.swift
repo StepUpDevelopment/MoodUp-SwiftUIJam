@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewEntryView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var isShowingNewEntryCategoryView = false
     @State private var selectedMood: MoodType?
     
@@ -47,11 +49,12 @@ struct NewEntryView: View {
 						), isActive: $isShowingNewEntryCategoryView) {}
 					}
 					
-                    MainButton(buttonTitle: "continue", enabled: selectedMood != nil) {
+                    MainButton(buttonTitle: "continue") {
 						if selectedMood != nil {
 							self.isShowingNewEntryCategoryView = true
 						}
 					}
+                    .disabled(selectedMood == nil)
                     .padding()
                 }
             }

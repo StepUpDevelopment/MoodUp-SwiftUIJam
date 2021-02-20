@@ -50,7 +50,7 @@ struct NewEntryCategoryGridView: View {
                 spacing: 16
             ) {
                 ForEach(entryViewModel.moodCategories) { category in
-                    NewEntryCategoryGridItemView(category: category, entryViewModel: entryViewModel)
+                    NewEntryCategoryGridItemView(entryViewModel: entryViewModel, category: category)
                 }
             }
         }
@@ -58,10 +58,11 @@ struct NewEntryCategoryGridView: View {
 }
 
 struct NewEntryCategoryGridItemView: View {
-    var category: MoodCategory
     @ObservedObject var entryViewModel: NewEntryCategoryViewModel
     
     @State var isCategorySelected: Bool = false
+
+    var category: MoodCategory
 
     var body: some View {
         VStack {
