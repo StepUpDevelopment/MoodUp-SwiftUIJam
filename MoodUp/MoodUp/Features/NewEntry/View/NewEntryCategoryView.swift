@@ -17,14 +17,11 @@ struct NewEntryCategoryView: View {
                 .ignoresSafeArea()
             
             VStack {
-				ForEach(viewModel.moodCategories) { category in
-					Text(category.title)
-				}
                 Spacer()
                 Text("new_entry_category_title")
                     .font(.title)
                     .padding()
-                NewEntryCategoryGridView(viewModel2: viewModel)
+                NewEntryCategoryGridView(entryViewModel: viewModel)
                 Spacer()
                 MainButton(buttonTitle: "save_mood") {
                     print("Save Mood")
@@ -36,9 +33,9 @@ struct NewEntryCategoryView: View {
 }
 
 struct NewEntryCategoryGridView: View {
-    @ObservedObject var viewModel2: NewEntryCategoryViewModel
+    @ObservedObject var entryViewModel: NewEntryCategoryViewModel
     
-    private var columns: [GridItem] = [
+    public var columns: [GridItem] = [
             GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16),
             GridItem(.fixed(100), spacing: 16)
@@ -51,8 +48,8 @@ struct NewEntryCategoryGridView: View {
                 alignment: .center,
                 spacing: 16
             ) {
-                ForEach(0...100, id: \.self) { index in
-                    NewEntryCategoryGridItemView(gridIndex: index)
+                ForEach(entryViewModel.moodCategories) { category in
+                    NewEntryCategoryGridItemView(category: category)
                 }
             }
         }
@@ -60,7 +57,7 @@ struct NewEntryCategoryGridView: View {
 }
 
 struct NewEntryCategoryGridItemView: View {
-    var gridIndex: Int
+    var category: MoodCategory
 
     var body: some View {
         VStack {
@@ -68,10 +65,11 @@ struct NewEntryCategoryGridItemView: View {
                 
             }, label: {
                 VStack {
-                    Image("CategoryHome")
+                    Image(category.iconName)
                         .resizable()
                         .frame(width: 64.0, height: 64.0)
-                    Text("abc \(gridIndex)")
+                    Text(LocalizedStringKey(category.title))
+                        .font(.caption)
                 }
             })
             .buttonStyle(SelectableButtonStyle(isSelected: false))
