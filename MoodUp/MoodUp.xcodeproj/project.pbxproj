@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A28000425E1A0D700C6920D /* Array+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28000325E1A0D700C6920D /* Array+Index.swift */; };
+		0A28001A25E1BB9400C6920D /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28001925E1BB9400C6920D /* PieChart.swift */; };
 		0A28FFFF25E19F1F00C6920D /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A28FFFE25E19F1F00C6920D /* ListSection.swift */; };
 		0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */; };
 		0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		0A28000325E1A0D700C6920D /* Array+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Index.swift"; sourceTree = "<group>"; };
+		0A28001925E1BB9400C6920D /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		0A28FFFE25E19F1F00C6920D /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
 		0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodCategory+CoreData.swift"; sourceTree = "<group>"; };
 		0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Assets.swift"; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				A428042225E066200013D161 /* StatsView.swift */,
+				0A28001925E1BB9400C6920D /* PieChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */,
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
 				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
+				0A28001A25E1BB9400C6920D /* PieChart.swift in Sources */,
 				0A28FFFF25E19F1F00C6920D /* ListSection.swift in Sources */,
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
 				A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */,
