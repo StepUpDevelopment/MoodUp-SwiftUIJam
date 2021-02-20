@@ -25,6 +25,15 @@
 "great" = "Great";
 "excellent" = "Excellent";
 
+// Category titles
+"category_family" = "Family";
+"category_food" = "Food";
+"category_friends" = "Friends";
+"category_home" = "Home";
+"category_money" = "Money";
+"category_money" = "Relationship";
+"category_work" = "Work";
+
 // New entry
 "new_entry_title" = "How are you feeling?";
 "new_entry_category_title" = "What is related to your feelings?";

@@ -1,37 +1,37 @@
 [
   {
 	"identifier": 1,
-	"title": "Family",
+	"title": "category_family",
 	"iconName": "CategoryFamily"
   },
   {
 	"identifier": 2,
-	"title": "Food",
+	"title": "category_food",
 	"iconName": "CategoryFood"
   },
   {
 	"identifier": 3,
-	"title": "Friends",
+	"title": "category_friends",
 	"iconName": "CategoryFriends"
   },
   {
 	"identifier": 4,
-	"title": "Home",
+	"title": "category_home",
 	"iconName": "CategoryHome"
   },
   {
 	"identifier": 5,
-	"title": "Money",
+	"title": "category_money",
 	"iconName": "CategoryMoney"
   },
   {
 	"identifier": 6,
-	"title": "Relationship",
+	"title": "category_money",
 	"iconName": "CategoryRelationship"
   },
   {
 	"identifier": 7,
-	"title": "Work",
+	"title": "category_work",
 	"iconName": "CategoryWork"
   }
 ]
