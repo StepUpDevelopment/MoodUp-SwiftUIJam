@@ -29,6 +29,7 @@ struct TimelineView: View {
                 ScrollView {
 					ScrollViewReader { reader in
 						LazyVStack {
+							//TODO: List<Section> ist zwar Identifiable aber nur mit id: \.self klappt es mit scrollen. Passt das ? 
 							ForEach(viewModel.sections, id: \.self) { section in
 								Text(section.title)
 								ForEach(section.items, id: \.self) { moodEntry in
@@ -59,7 +60,7 @@ struct TimelineView: View {
 
     private func handleDaySelected(dayItem: DayItem) {
         let selectedDate = Date(timeIntervalSince1970: dayItem.timestamp)
-		//TODO: Spinni help first Entry ist kein Mood Entry mehr sonder Sections
+		//TODO: Passt die Anpassung so ? Funktionieren tut es zumindest mal
 		let firstEntry = viewModel.sections.first { section in
             let calendar = Calendar.current
 			let entryDateComponents = calendar.dateComponents([.day, .month, .year], from: section.items.first?.createdDate ?? Date())

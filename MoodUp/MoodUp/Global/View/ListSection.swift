@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct ListSection<T> : Hashable, Equatable, Identifiable where T: Identifiable {
+struct ListSection<T> : Identifiable where T: Identifiable {
 	
 	var id: UUID = UUID()
 	var title: String
 	var items: [T]
+	
+}
+
+extension ListSection : Hashable, Equatable  {
 	
 	static func == (lhs: ListSection<T>, rhs: ListSection<T>) -> Bool {
 		lhs.id == rhs.id
@@ -20,4 +24,5 @@ struct ListSection<T> : Hashable, Equatable, Identifiable where T: Identifiable 
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
 	}
+	
 }
