@@ -29,8 +29,7 @@ struct TimelineView: View {
 
                     ScrollView {
                         ScrollViewReader { reader in
-                            LazyVStack {
-                                //TODO: List<Section> ist zwar Identifiable aber nur mit id: \.self klappt es mit scrollen. Passt das ?
+                            LazyVStack {                                
                                 ForEach(viewModel.sections, id: \.self) { section in
                                     Text(section.title.uppercased())
                                         .fontWeight(.light)

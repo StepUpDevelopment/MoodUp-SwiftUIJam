@@ -12,7 +12,6 @@ import Combine
 class TimelineViewModel: ObservableObject {
     
     let storageProvider: StorageProvider
-//    @Published var moodEntries: [MoodEntry] = []
 	private var cancellable = Set<AnyCancellable>()
     
 	@Published var sections: [ListSection<MoodEntry>] = []
@@ -33,15 +32,16 @@ class TimelineViewModel: ObservableObject {
 	}
 	
 	private func appendItemsToSections(items: [MoodEntry]) {
-		items.forEach { currentEntry in
-			let dayName = currentEntry.createdDate.fullName()
-			if sections.isEmpty || sections.first?.title != dayName {
-				sections.insert(ListSection(title: dayName, items: [currentEntry]), at: 0)
-			} else {
-				sections[0].items.insert(currentEntry, at: 0)
-			}
-			
-		}		
+		sections = self.convertToSections(from: storageProvider.getAllEntries())
+//		items.forEach { currentEntry in
+//			let dayName = currentEntry.createdDate.fullName()
+//			if sections.isEmpty || sections.first?.title != dayName {
+//				sections.insert(ListSection(title: dayName, items: [currentEntry]), at: 0)
+//			} else {
+//				sections[0].items.insert(currentEntry, at: 0)
+//			}
+//			
+//		}		
 	}
 
 	private func convertToSections(from entries: [MoodEntry]) -> [ListSection<MoodEntry>] {
