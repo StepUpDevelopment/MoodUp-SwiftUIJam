@@ -48,6 +48,11 @@
 		A428041D25E065D50013D161 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428041C25E065D50013D161 /* SettingsView.swift */; };
 		A428042325E066200013D161 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428042225E066200013D161 /* StatsView.swift */; };
 		A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428042825E12BCC0013D161 /* NewEntryCategoryView.swift */; };
+		A4B3AD3725E2795E00837E3A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B3AD3625E2795E00837E3A /* WidgetKit.framework */; };
+		A4B3AD3925E2795E00837E3A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B3AD3825E2795E00837E3A /* SwiftUI.framework */; };
+		A4B3AD3C25E2795E00837E3A /* MoodUpMoodChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3AD3B25E2795E00837E3A /* MoodUpMoodChooserWidget.swift */; };
+		A4B3AD3E25E2795F00837E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B3AD3D25E2795F00837E3A /* Assets.xcassets */; };
+		A4B3AD4225E2795F00837E3A /* MoodUpMoodChooserWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +63,28 @@
 			remoteGlobalIDString = 34B3ACE225DFF5750048DD72;
 			remoteInfo = MoodUp;
 		};
+		A4B3AD4025E2795F00837E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34B3ACDB25DFF5750048DD72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B3AD3325E2795E00837E3A;
+			remoteInfo = MoodUpMoodChooserWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4B3AD4325E2795F00837E3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A4B3AD4225E2795F00837E3A /* MoodUpMoodChooserWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A28000325E1A0D700C6920D /* Array+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Index.swift"; sourceTree = "<group>"; };
@@ -107,6 +133,12 @@
 		A428041C25E065D50013D161 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A428042225E066200013D161 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A428042825E12BCC0013D161 /* NewEntryCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryCategoryView.swift; sourceTree = "<group>"; };
+		A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodUpMoodChooserWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B3AD3625E2795E00837E3A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A4B3AD3825E2795E00837E3A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A4B3AD3B25E2795E00837E3A /* MoodUpMoodChooserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpMoodChooserWidget.swift; sourceTree = "<group>"; };
+		A4B3AD3D25E2795F00837E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4B3AD3F25E2795F00837E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +153,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B3AD3125E2795E00837E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD3925E2795E00837E3A /* SwiftUI.framework in Frameworks */,
+				A4B3AD3725E2795E00837E3A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +277,8 @@
 			children = (
 				34B3ACE525DFF5750048DD72 /* MoodUp */,
 				0AC5295C25E11C5700B3042F /* MoodUpTests */,
+				A4B3AD3A25E2795E00837E3A /* MoodUpMoodChooserWidget */,
+				A4B3AD3525E2795E00837E3A /* Frameworks */,
 				34B3ACE425DFF5750048DD72 /* Products */,
 				A401B2FF25E05E3D0061CAFD /* Recovered References */,
 			);
@@ -246,6 +289,7 @@
 			children = (
 				34B3ACE325DFF5750048DD72 /* MoodUp.app */,
 				0AC5295B25E11C5700B3042F /* MoodUpTests.xctest */,
+				A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +471,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A4B3AD3525E2795E00837E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4B3AD3625E2795E00837E3A /* WidgetKit.framework */,
+				A4B3AD3825E2795E00837E3A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4B3AD3A25E2795E00837E3A /* MoodUpMoodChooserWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A4B3AD3B25E2795E00837E3A /* MoodUpMoodChooserWidget.swift */,
+				A4B3AD3D25E2795F00837E3A /* Assets.xcassets */,
+				A4B3AD3F25E2795F00837E3A /* Info.plist */,
+			);
+			path = MoodUpMoodChooserWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,15 +518,34 @@
 				34B3ACDF25DFF5750048DD72 /* Sources */,
 				34B3ACE025DFF5750048DD72 /* Frameworks */,
 				34B3ACE125DFF5750048DD72 /* Resources */,
+				A4B3AD4325E2795F00837E3A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A4B3AD4125E2795F00837E3A /* PBXTargetDependency */,
 			);
 			name = MoodUp;
 			productName = MoodUp;
 			productReference = 34B3ACE325DFF5750048DD72 /* MoodUp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A4B3AD3325E2795E00837E3A /* MoodUpMoodChooserWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4B3AD4625E2795F00837E3A /* Build configuration list for PBXNativeTarget "MoodUpMoodChooserWidgetExtension" */;
+			buildPhases = (
+				A4B3AD3025E2795E00837E3A /* Sources */,
+				A4B3AD3125E2795E00837E3A /* Frameworks */,
+				A4B3AD3225E2795E00837E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodUpMoodChooserWidgetExtension;
+			productName = MoodUpMoodChooserWidgetExtension;
+			productReference = A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -479,6 +561,9 @@
 						TestTargetID = 34B3ACE225DFF5750048DD72;
 					};
 					34B3ACE225DFF5750048DD72 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A4B3AD3325E2795E00837E3A = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -498,6 +583,7 @@
 			targets = (
 				34B3ACE225DFF5750048DD72 /* MoodUp */,
 				0AC5295A25E11C5700B3042F /* MoodUpTests */,
+				A4B3AD3325E2795E00837E3A /* MoodUpMoodChooserWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -518,6 +604,14 @@
 				34B3ACEE25DFF5760048DD72 /* Preview Assets.xcassets in Resources */,
 				34B3AD1F25E051110048DD72 /* Localizable.strings in Resources */,
 				34B3ACEB25DFF5760048DD72 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B3AD3225E2795E00837E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD3E25E2795F00837E3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +669,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A4B3AD3025E2795E00837E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD3C25E2795E00837E3A /* MoodUpMoodChooserWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -582,6 +684,11 @@
 			isa = PBXTargetDependency;
 			target = 34B3ACE225DFF5750048DD72 /* MoodUp */;
 			targetProxy = 0AC5296025E11C5700B3042F /* PBXContainerItemProxy */;
+		};
+		A4B3AD4125E2795F00837E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4B3AD3325E2795E00837E3A /* MoodUpMoodChooserWidgetExtension */;
+			targetProxy = A4B3AD4025E2795F00837E3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -754,6 +861,7 @@
 		34B3ACF325DFF5760048DD72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -778,6 +886,7 @@
 		34B3ACF425DFF5760048DD72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -794,6 +903,50 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ld-ent-wildcard-development-xcode11";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A4B3AD4425E2795F00837E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = MoodUpMoodChooserWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp.MoodUpMoodChooserWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4B3AD4525E2795F00837E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = MoodUpMoodChooserWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp.MoodUpMoodChooserWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -825,6 +978,15 @@
 			buildConfigurations = (
 				34B3ACF325DFF5760048DD72 /* Debug */,
 				34B3ACF425DFF5760048DD72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4B3AD4625E2795F00837E3A /* Build configuration list for PBXNativeTarget "MoodUpMoodChooserWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4B3AD4425E2795F00837E3A /* Debug */,
+				A4B3AD4525E2795F00837E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
