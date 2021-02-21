@@ -22,7 +22,14 @@ extension MoodEntry {
 
 extension DbMoodEntry {
     
-    func moodEntry() -> MoodEntry {
+	func moodEntry(withoutCategory: Bool = false) -> MoodEntry {
+		if withoutCategory {
+			return MoodEntry(moodType: MoodType(rawValue: Int(type)) ?? .okay,
+							 categories: [],
+					  text: text,
+					  createdDate: createdDate ?? Date())
+			
+		}
         guard let categories = self.categories as? Set<DbMoodCategory> else {
             preconditionFailure("Failed to load categories")
         }

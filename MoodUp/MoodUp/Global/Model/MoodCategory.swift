@@ -12,7 +12,7 @@ struct MoodCategory: Codable {
 	var identifier: Int
     var title: String
     var iconName: String
-	
+	var moodCategories: [MoodEntry]?
 }
 
 extension MoodCategory: Identifiable {

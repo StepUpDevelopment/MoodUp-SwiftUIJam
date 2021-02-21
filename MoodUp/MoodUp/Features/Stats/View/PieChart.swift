@@ -56,6 +56,7 @@ struct MoodTypeValue {
 	var type: MoodType
 	var value: Double
 }
+
 struct TmpAngle : Hashable {
 	var start: Angle
 	var range: Angle
@@ -68,12 +69,19 @@ struct TmpAngle : Hashable {
 
 struct PieChart_Previews: PreviewProvider {
 	static var previews: some View {
-		PieChart(values: [
-			MoodTypeValue(type: .bad, value: 10),
-			MoodTypeValue(type: .awful, value: 5),
-			MoodTypeValue(type: .excellent, value: 25),
-			MoodTypeValue(type: .great, value: 25),
-			MoodTypeValue(type: .meh, value: 80)
-		])
+		Group {
+			PieChart(values: [
+				MoodTypeValue(type: .bad, value: 1),
+				MoodTypeValue(type: .awful, value: 1)
+			])
+		
+			PieChart(values: [
+				MoodTypeValue(type: .bad, value: 10),
+				MoodTypeValue(type: .awful, value: 5),
+				MoodTypeValue(type: .excellent, value: 25),
+				MoodTypeValue(type: .great, value: 25),
+				MoodTypeValue(type: .meh, value: 80)
+			])
+		}
 	}
 }

@@ -24,10 +24,15 @@ extension MoodCategory {
 extension DbMoodCategory {
 	
 	func moodCategory() -> MoodCategory {
+
+		guard let entries = self.entries as? Set<DbMoodEntry> else {
+			preconditionFailure("Failed to load categories")
+		}
 		let moodCategory = MoodCategory(
 			identifier: Int(identifier),
 			title: title ?? "",
-			iconName: iconName ?? ""
+			iconName: iconName ?? "",
+			moodCategories: Array(entries).map { $0.moodEntry(withoutCategory: true) }
 		)
 		return moodCategory
 	}

@@ -21,7 +21,7 @@ struct TabBarView: View {
             TimelineView(viewModel: TimelineViewModel(storageProvider: storageProvider)).tabItem {
                 TabItem(title: "timeline", systemImage: "house.fill")
             }.tag(Tab.timeline)
-            StatsView().tabItem {
+            StatsView(viewModel: StatsViewModel(storageProvider: storageProvider)).tabItem {
                 TabItem(title: "stats", systemImage: "speedometer")
             }.tag(Tab.stats)
             SettingsView().tabItem {
