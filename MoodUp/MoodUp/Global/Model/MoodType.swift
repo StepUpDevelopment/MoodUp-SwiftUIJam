@@ -43,7 +43,7 @@ extension MoodType {
 		}
 	}
     
-    var titleKey: LocalizedStringKey {
+    var titleKey: String {
         switch self {
         case .awful:
             return "awful"

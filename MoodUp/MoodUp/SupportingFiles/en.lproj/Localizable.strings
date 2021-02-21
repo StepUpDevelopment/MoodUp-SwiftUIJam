@@ -36,4 +36,5 @@
 
 // New entry
 "new_entry_title" = "How are you feeling?";
-"new_entry_category_title" = "What is related to your feelings?";
+"new_entry_category_title" = "Why do you feel %@?";
+"new_entry_category_input_placeholder" = "Dear diary...";

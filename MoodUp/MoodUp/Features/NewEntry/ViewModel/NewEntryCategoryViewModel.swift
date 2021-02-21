@@ -11,11 +11,12 @@ import SwiftUI
 class NewEntryCategoryViewModel : ObservableObject {
 	
 	@Published var moodCategories: [MoodCategory] = []
-	private var moodType: MoodType
+	var moodType: MoodType
     
     var storageProvider: StorageProvider
     
     var selectedMoodCategories: [MoodCategory] = []
+    var moodText: String?
 	
 	init(moodType: MoodType, storageProvider: StorageProvider) {
 		self.moodType = moodType
@@ -24,7 +25,7 @@ class NewEntryCategoryViewModel : ObservableObject {
 	}
 	
     func save() {
-        let moodEntry = MoodEntry(moodType: moodType, categories: selectedMoodCategories)
+        let moodEntry = MoodEntry(moodType: moodType, categories: selectedMoodCategories, text: moodText)
         storageProvider.saveEntry(moodEntry: moodEntry)
     }
 }

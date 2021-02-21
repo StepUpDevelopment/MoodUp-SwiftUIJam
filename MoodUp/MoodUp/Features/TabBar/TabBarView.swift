@@ -27,7 +27,9 @@ struct TabBarView: View {
             SettingsView().tabItem {
                 TabItem(title: "settings", systemImage: "gear")
             }.tag(Tab.settings)
-        }.edgesIgnoringSafeArea(.top)
+        }
+        .edgesIgnoringSafeArea(.top)
+        .accentColor(.tabbarAccent)
     }
 }
 

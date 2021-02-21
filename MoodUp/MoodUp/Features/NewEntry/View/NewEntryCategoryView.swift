@@ -10,24 +10,64 @@ import SwiftUI
 struct NewEntryCategoryView: View {
     @Binding var isShowingNewEntryView: Bool
     
+    @State var inputText: String = NSLocalizedString("new_entry_category_input_placeholder", comment: "")
+    
     @ObservedObject var viewModel: NewEntryCategoryViewModel
 
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("new_entry_category_title")
-                    .font(.title)
+        GeometryReader { geometry in
+            ZStack {
+                LinearGradient.main
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Text(String(format: NSLocalizedString("new_entry_category_title", comment: ""),
+                                viewModel.moodType.titleKey))
+                        .foregroundColor(.primaryForegroundColor)
+                        .font(.title)
+                        .padding(.leading, 32)
+                        .padding(.trailing, 32)
+                        .multilineTextAlignment(.center)
+                    
+                    NewEntryCategoryGridView(entryViewModel: viewModel)
+                    
+                    HStack {
+                        Image("Edit")
+                            .resizable()
+                            .frame(width: 48, height: 48)
+                            .foregroundColor(.primaryForegroundColor)
+                            .padding(.leading, 8)
+                        
+                        TextEditor(text: $inputText)
+                            .padding(.top, 8)
+                            .padding(.bottom, 8)
+                            .accentColor(.primaryForegroundColor)
+                            .foregroundColor(.primaryForegroundColor)
+                            .font(.subheadline)
+                            .background(Color.selectableButtonBackground)
+                            .cornerRadius(8)
+                            .onTapGesture {
+                                if self.inputText == NSLocalizedString("new_entry_category_input_placeholder", comment: "") {
+                                    self.inputText = ""
+                                }
+                            }
+                    }
+                    .frame(width: geometry.size.width - 76, height: 68)
+                        .background(Color.selectableButtonBackground)
+                      
+                    MainButton(buttonTitle: "save") {
+                        if self.inputText != NSLocalizedString("new_entry_category_input_placeholder", comment: "") {
+                            viewModel.moodText = self.inputText
+                        }
+                        
+                        viewModel.save()
+                        
+                        UINotificationFeedbackGenerator().notificationOccurred(.success)
+                        
+                        isShowingNewEntryView = false
+                    }
                     .padding()
-                NewEntryCategoryGridView(entryViewModel: viewModel)
-                Spacer()
-                MainButton(buttonTitle: "save") {
-                    viewModel.save()
-                    isShowingNewEntryView = false
                 }
-                .padding()
             }
         }
     }
@@ -37,10 +77,10 @@ struct NewEntryCategoryGridView: View {
     @ObservedObject var entryViewModel: NewEntryCategoryViewModel
     
     var columns: [GridItem] = [
-            GridItem(.fixed(100), spacing: 16),
-            GridItem(.fixed(100), spacing: 16),
-            GridItem(.fixed(100), spacing: 16)
-        ]
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
 
     var body: some View {
         ScrollView {
@@ -53,6 +93,8 @@ struct NewEntryCategoryGridView: View {
                     NewEntryCategoryGridItemView(entryViewModel: entryViewModel, category: category)
                 }
             }
+            .padding(.leading, 32)
+            .padding(.trailing, 32)
         }
     }
 }

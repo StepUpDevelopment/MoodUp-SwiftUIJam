@@ -26,6 +26,7 @@ struct NewEntryView: View {
                 VStack {
                     Spacer()
                     Text("new_entry_title")
+                        .foregroundColor(.primaryForegroundColor)
                         .font(.title)
                         .padding()
                     HStack {
@@ -50,8 +51,9 @@ struct NewEntryView: View {
 					
                     MainButton(buttonTitle: "continue") {
 						if selectedMood != nil {
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
 							self.isShowingNewEntryCategoryView = true
-						}
+                        }
 					}
                     .disabled(selectedMood == nil)
                     .padding()
