@@ -53,6 +53,11 @@
 		A4B3AD3C25E2795E00837E3A /* MoodUpMoodChooserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3AD3B25E2795E00837E3A /* MoodUpMoodChooserWidget.swift */; };
 		A4B3AD3E25E2795F00837E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B3AD3D25E2795F00837E3A /* Assets.xcassets */; };
 		A4B3AD4225E2795F00837E3A /* MoodUpMoodChooserWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4B3AD4F25E27B8E00837E3A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B3AD3625E2795E00837E3A /* WidgetKit.framework */; };
+		A4B3AD5025E27B8E00837E3A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B3AD3825E2795E00837E3A /* SwiftUI.framework */; };
+		A4B3AD5325E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3AD5225E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift */; };
+		A4B3AD5525E27B8F00837E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B3AD5425E27B8F00837E3A /* Assets.xcassets */; };
+		A4B3AD5925E27B8F00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4B3AD4E25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,13 @@
 			remoteGlobalIDString = A4B3AD3325E2795E00837E3A;
 			remoteInfo = MoodUpMoodChooserWidgetExtension;
 		};
+		A4B3AD5725E27B8F00837E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34B3ACDB25DFF5750048DD72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B3AD4D25E27B8E00837E3A;
+			remoteInfo = MoodUpWeeklyStatsWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +92,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				A4B3AD4225E2795F00837E3A /* MoodUpMoodChooserWidgetExtension.appex in Embed App Extensions */,
+				A4B3AD5925E27B8F00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +152,10 @@
 		A4B3AD3B25E2795E00837E3A /* MoodUpMoodChooserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpMoodChooserWidget.swift; sourceTree = "<group>"; };
 		A4B3AD3D25E2795F00837E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B3AD3F25E2795F00837E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B3AD4E25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoodUpWeeklyStatsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B3AD5225E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpWeeklyStatsWidget.swift; sourceTree = "<group>"; };
+		A4B3AD5425E27B8F00837E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4B3AD5625E27B8F00837E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +179,15 @@
 			files = (
 				A4B3AD3925E2795E00837E3A /* SwiftUI.framework in Frameworks */,
 				A4B3AD3725E2795E00837E3A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B3AD4B25E27B8E00837E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD5025E27B8E00837E3A /* SwiftUI.framework in Frameworks */,
+				A4B3AD4F25E27B8E00837E3A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +304,7 @@
 				34B3ACE525DFF5750048DD72 /* MoodUp */,
 				0AC5295C25E11C5700B3042F /* MoodUpTests */,
 				A4B3AD3A25E2795E00837E3A /* MoodUpMoodChooserWidget */,
+				A4B3AD5125E27B8E00837E3A /* MoodUpWeeklyStatsWidget */,
 				A4B3AD3525E2795E00837E3A /* Frameworks */,
 				34B3ACE425DFF5750048DD72 /* Products */,
 				A401B2FF25E05E3D0061CAFD /* Recovered References */,
@@ -290,6 +317,7 @@
 				34B3ACE325DFF5750048DD72 /* MoodUp.app */,
 				0AC5295B25E11C5700B3042F /* MoodUpTests.xctest */,
 				A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */,
+				A4B3AD4E25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -490,6 +518,16 @@
 			path = MoodUpMoodChooserWidget;
 			sourceTree = "<group>";
 		};
+		A4B3AD5125E27B8E00837E3A /* MoodUpWeeklyStatsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A4B3AD5225E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift */,
+				A4B3AD5425E27B8F00837E3A /* Assets.xcassets */,
+				A4B3AD5625E27B8F00837E3A /* Info.plist */,
+			);
+			path = MoodUpWeeklyStatsWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,6 +562,7 @@
 			);
 			dependencies = (
 				A4B3AD4125E2795F00837E3A /* PBXTargetDependency */,
+				A4B3AD5825E27B8F00837E3A /* PBXTargetDependency */,
 			);
 			name = MoodUp;
 			productName = MoodUp;
@@ -547,6 +586,23 @@
 			productReference = A4B3AD3425E2795E00837E3A /* MoodUpMoodChooserWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		A4B3AD4D25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4B3AD5A25E27B8F00837E3A /* Build configuration list for PBXNativeTarget "MoodUpWeeklyStatsWidgetExtension" */;
+			buildPhases = (
+				A4B3AD4A25E27B8E00837E3A /* Sources */,
+				A4B3AD4B25E27B8E00837E3A /* Frameworks */,
+				A4B3AD4C25E27B8E00837E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodUpWeeklyStatsWidgetExtension;
+			productName = MoodUpWeeklyStatsWidgetExtension;
+			productReference = A4B3AD4E25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -564,6 +620,9 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					A4B3AD3325E2795E00837E3A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A4B3AD4D25E27B8E00837E3A = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -584,6 +643,7 @@
 				34B3ACE225DFF5750048DD72 /* MoodUp */,
 				0AC5295A25E11C5700B3042F /* MoodUpTests */,
 				A4B3AD3325E2795E00837E3A /* MoodUpMoodChooserWidgetExtension */,
+				A4B3AD4D25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -612,6 +672,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B3AD3E25E2795F00837E3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4B3AD4C25E27B8E00837E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD5525E27B8F00837E3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +745,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A4B3AD4A25E27B8E00837E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4B3AD5325E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -689,6 +765,11 @@
 			isa = PBXTargetDependency;
 			target = A4B3AD3325E2795E00837E3A /* MoodUpMoodChooserWidgetExtension */;
 			targetProxy = A4B3AD4025E2795F00837E3A /* PBXContainerItemProxy */;
+		};
+		A4B3AD5825E27B8F00837E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4B3AD4D25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension */;
+			targetProxy = A4B3AD5725E27B8F00837E3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -952,6 +1033,50 @@
 			};
 			name = Release;
 		};
+		A4B3AD5B25E27B8F00837E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = MoodUpWeeklyStatsWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp.MoodUpWeeklyStatsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4B3AD5C25E27B8F00837E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55N9D27866;
+				INFOPLIST_FILE = MoodUpWeeklyStatsWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.stepup.MoodUp.MoodUpWeeklyStatsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -987,6 +1112,15 @@
 			buildConfigurations = (
 				A4B3AD4425E2795F00837E3A /* Debug */,
 				A4B3AD4525E2795F00837E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4B3AD5A25E27B8F00837E3A /* Build configuration list for PBXNativeTarget "MoodUpWeeklyStatsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4B3AD5B25E27B8F00837E3A /* Debug */,
+				A4B3AD5C25E27B8F00837E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

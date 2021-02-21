@@ -1,6 +1,6 @@
 //
-//  MoodUpMoodChooserWidget.swift
-//  MoodUpMoodChooserWidget
+//  MoodUpWeeklyStatsWidget.swift
+//  MoodUpWeeklyStatsWidget
 //
 //  Created by Fabian Köbel on 21.02.21.
 //
@@ -38,7 +38,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
-struct MoodUpMoodChooserWidgetEntryView : View {
+struct MoodUpWeeklyStatsWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -47,21 +47,21 @@ struct MoodUpMoodChooserWidgetEntryView : View {
 }
 
 @main
-struct MoodUpMoodChooserWidget: Widget {
-    let kind: String = "MoodUpMoodChooserWidget"
+struct MoodUpWeeklyStatsWidget: Widget {
+    let kind: String = "MoodUpWeeklyStatsWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            MoodUpMoodChooserWidgetEntryView(entry: entry)
+            MoodUpWeeklyStatsWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Mood Chooser")
-        .description("Select your current mood.")
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
     }
 }
 
-struct MoodUpMoodChooserWidget_Previews: PreviewProvider {
+struct MoodUpWeeklyStatsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MoodUpMoodChooserWidgetEntryView(entry: SimpleEntry(date: Date()))
+        MoodUpWeeklyStatsWidgetEntryView(entry: SimpleEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
