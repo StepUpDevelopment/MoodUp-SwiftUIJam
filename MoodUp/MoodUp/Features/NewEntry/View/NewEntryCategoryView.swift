@@ -66,7 +66,13 @@ struct NewEntryCategoryView: View {
                         isShowingNewEntryView = false
                     }
                     .padding()
-                }
+                }.navigationBarItems(trailing:
+					Button(action: {
+						isShowingNewEntryView = false
+					}, label: {
+					 Text("cancel")
+					})
+			 )
             }
             .sheet(isPresented: $showNoteSheet, content: {
                 NewEntryNoteView(viewModel: viewModel)

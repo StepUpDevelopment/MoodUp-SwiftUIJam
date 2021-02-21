@@ -9,25 +9,34 @@ import SwiftUI
 
 struct NewEntryNoteView: View {
     
+	@Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: NewEntryViewModel
     @State var noteText = NSLocalizedString("new_entry_category_input_placeholder", comment: "")
-    
+	
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("Write down your feelings")
-                    .font(.title)
-                
-                TextEditor(text: $noteText)
-                
-                Spacer()
-            }
-            .foregroundColor(.primaryForegroundColor)
-            .padding()
-        }
+		NavigationView {
+			ZStack {
+				LinearGradient.main
+					.ignoresSafeArea()
+				
+				VStack {
+					
+					TextEditor(text: $noteText)
+					
+					Spacer()
+				}
+				.foregroundColor(.primaryForegroundColor)
+				.padding()
+			}
+			.navigationBarItems(trailing:
+				Button(action: {
+					presentationMode.wrappedValue.dismiss()					
+				}, label: {
+					Text("cancel")
+				})
+			)
+			.navigationTitle("new_entry_note")
+		}
     }
 }
 
