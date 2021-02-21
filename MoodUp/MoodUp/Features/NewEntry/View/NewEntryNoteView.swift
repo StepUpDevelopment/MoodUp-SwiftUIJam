@@ -14,28 +14,36 @@ struct NewEntryNoteView: View {
     @State var noteText = ""
     
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("Write down your feelings")
-                    .font(.title)
-                
-                TextEditor(text: $noteText)
-                
-                Spacer()
-                
-                MainButton(buttonTitle: "save") {
-                    viewModel.moodText = noteText
-                    presentationMode.wrappedValue.dismiss()
+        NavigationView {
+            ZStack {
+                LinearGradient.main
+                        .ignoresSafeArea()
+
+                VStack {
+
+                    TextEditor(text: $noteText)
+
+                    Spacer()
+
+                    MainButton(buttonTitle: "save") {
+                        viewModel.moodText = noteText
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
+                .foregroundColor(.primaryForegroundColor)
+                .padding()
             }
-            .foregroundColor(.primaryForegroundColor)
-            .padding()
-        }
-        .onAppear {
-            noteText = viewModel.moodText
+			.onAppear {
+				noteText = viewModel.moodText
+			}
+            .navigationBarItems(trailing:
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("cancel")
+                })
+            )
+            .navigationTitle("new_entry_note")
         }
     }
 }

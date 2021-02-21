@@ -55,6 +55,10 @@ struct NewEntryCategoryView: View {
                     })
                       
                     MainButton(buttonTitle: "save") {
+                        if self.inputText != NSLocalizedString("new_entry_category_input_placeholder", comment: "") {
+                            viewModel.moodText = self.inputText
+                        }
+                        
                         viewModel.save()
                         
                         UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -62,7 +66,13 @@ struct NewEntryCategoryView: View {
                         isShowingNewEntryView = false
                     }
                     .padding()
-                }
+                }.navigationBarItems(trailing:
+					Button(action: {
+						isShowingNewEntryView = false
+					}, label: {
+					 Text("cancel")
+					})
+			 )
             }
             .sheet(isPresented: $showNoteSheet, content: {
                 NewEntryNoteView(viewModel: viewModel)

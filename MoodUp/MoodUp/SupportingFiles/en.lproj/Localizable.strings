@@ -10,6 +10,7 @@
 "continue" = "Continue";
 "save" = "Save";
 "add_mood" = "Add Mood";
+"cancel" = "Cancel";
 
 // View Titles
 "timeline" = "Timeline";
@@ -38,3 +39,6 @@
 "new_entry_title" = "How are you feeling?";
 "new_entry_category_title" = "Why do you feel %@?";
 "new_entry_category_input_placeholder" = "Dear diary...";
+
+// New entry note
+"new_entry_note" = "Write down your feelings";

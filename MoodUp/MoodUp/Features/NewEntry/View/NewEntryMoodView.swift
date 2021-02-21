@@ -16,10 +16,10 @@ struct NewEntryMoodView: View {
     @Binding var isShowingNewEntryView: Bool
 	
 	var storageProvider: StorageProvider
-    
+	    
     var body: some View {
         NavigationView {
-            ZStack {
+			ZStack {
                 LinearGradient.main
                     .ignoresSafeArea()
                 
@@ -59,8 +59,16 @@ struct NewEntryMoodView: View {
                     
                     Spacer()
                 }
+				
+				.navigationBarItems(trailing:
+					Button(action: {
+						isShowingNewEntryView = false
+					}, label: {
+						Text("cancel")
+					})
+				)
             }
-        }.navigationBarHidden(true)
+		}
     }
     
     private func moodButton(moodType: MoodType,
