@@ -16,32 +16,38 @@ struct MoodEntryDetailView: View {
             LinearGradient.main
                 .ignoresSafeArea()
             
-            VStack {
-                HStack(spacing: 16) {
-                    SmileyView(moodType: moodEntry.moodType)
-                        .frame(width: 50, height: 50)
-                    VStack(alignment: .leading) {
-                        Text(LocalizedStringKey(moodEntry.moodType.titleKey))
-                            .foregroundColor(.primaryForegroundColor)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        
-                        Text(moodEntry.createdDate.mediumAndTimeString())
+            ScrollView {
+                VStack {
+                    HStack(spacing: 16) {
+                        SmileyView(moodType: moodEntry.moodType)
+                            .frame(width: 50, height: 50)
+                        VStack(alignment: .leading) {
+                            Text(LocalizedStringKey(moodEntry.moodType.titleKey))
+                                .foregroundColor(.primaryForegroundColor)
+                                .font(.title)
+                                .fontWeight(.bold)
+                            
+                            Text(moodEntry.createdDate.mediumAndTimeString())
+                        }
                     }
-                }
-                .padding()
-                
-                if let moodNote = moodEntry.text {
-                    HStack {
-                        Text(moodNote)
-                            .padding()
+                    .padding()
+                    
+                    MoodEntryDetailCategoryGridView(categories: moodEntry.categories) { selectedCategory in
+                        print("Category selected")
                     }
-                    .background(Color.secondaryBackground)
-                    .embedInCardView()
-                    .padding([.leading, .trailing], 30)
+                    
+                    if let moodNote = moodEntry.text {
+                        HStack {
+                            Text(moodNote)
+                                .padding()
+                        }
+                        .background(Color.secondaryBackground)
+                        .embedInCardView()
+                        .padding([.leading, .trailing], 30)
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
         }.navigationBarTitle("", displayMode: .inline)
     }
@@ -50,6 +56,11 @@ struct MoodEntryDetailView: View {
 
 struct MoodEntryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MoodEntryDetailView(moodEntry: MoodEntry(moodType: .good, text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "))
+        MoodEntryDetailView(moodEntry: MoodEntry(moodType: .good, categories: [
+             MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
+             MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney"),
+             MoodCategory(identifier: 3, title: "category_friends", iconName: "CategoryFriends"),
+            MoodCategory(identifier: 4, title: "category_mountains", iconName: "CategoryMountains")
+         ], text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "))
     }
 }
