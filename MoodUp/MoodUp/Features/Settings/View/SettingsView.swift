@@ -11,17 +11,20 @@ struct SettingsView: View {
 	init(){
 		UITableView.appearance().backgroundColor = .clear
 	}
+	
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-			Form {
-				Section(header: Text("Icons")) {
-					Text("Icons von Icons8 (https://icons8.de)")
+		NavigationView {
+			ZStack {
+				LinearGradient.main
+					.ignoresSafeArea()
+				Form {
+					Section(header: Text("Icons")) {
+						Text("Icons von Icons8 (https://icons8.de)")
+					}
 				}
 			}
-        }
-            
+			.navigationTitle("settings")
+		}
     }
 }
 
