@@ -14,6 +14,8 @@ class TimelineViewModel: ObservableObject {
     let storageProvider: StorageProvider
 	private var cancellable = Set<AnyCancellable>()
     
+    var preselectedMood: MoodType?
+    
 	@Published var sections: [ListSection<MoodEntry>] = []
 	
     init(storageProvider: StorageProvider) {
