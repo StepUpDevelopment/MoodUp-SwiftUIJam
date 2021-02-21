@@ -34,6 +34,17 @@
 "category_money" = "Money";
 "category_relationship" = "Relationship";
 "category_work" = "Work";
+"category_music" = "Music";
+"category_nature" = "Nature";
+"category_vacation" = "Vacation";
+"category_mountains" = "Mountains";
+"category_school" = "School";
+"category_reading" = "Reading";
+"category_sports" = "Sports";
+"category_sunny" = "Sunny";
+"category_rainy" = "Rainy";
+"category_plants" = "Plants";
+"category_programming" = "Programming";
 
 // New entry
 "new_entry_title" = "How are you feeling?";

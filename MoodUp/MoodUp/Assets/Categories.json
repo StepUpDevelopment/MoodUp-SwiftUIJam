@@ -33,5 +33,60 @@
 	"identifier": 7,
 	"title": "category_work",
 	"iconName": "CategoryWork"
+  },
+  {
+	"identifier": 8,
+	"title": "category_music",
+	"iconName": "CategoryMusic"
+  },
+  {
+	"identifier": 9,
+	"title": "category_nature",
+	"iconName": "CategoryNature"
+  },
+  {
+	"identifier": 10,
+	"title": "category_vacation",
+	"iconName": "CategoryVacation"
+  },
+  {
+	"identifier": 11,
+	"title": "category_mountains",
+	"iconName": "CategoryMountains"
+  },
+  {
+	"identifier": 12,
+	"title": "category_school",
+	"iconName": "CategorySchool"
+  },
+  {
+	"identifier": 13,
+	"title": "category_reading",
+	"iconName": "CategoryReading"
+  },
+  {
+	"identifier": 14,
+	"title": "category_sports",
+	"iconName": "CategorySports"
+  },
+  {
+	"identifier": 15,
+	"title": "category_sunny",
+	"iconName": "CategorySunny"
+  },
+  {
+	"identifier": 16,
+	"title": "category_rainy",
+	"iconName": "CategoryRainy"
+  },
+  {
+	"identifier": 17,
+	"title": "category_plants",
+	"iconName": "CategoryPlants"
+  },
+  {
+	"identifier": 18,
+	"title": "category_programming",
+	"iconName": "CategoryProgramming"
   }
 ]
