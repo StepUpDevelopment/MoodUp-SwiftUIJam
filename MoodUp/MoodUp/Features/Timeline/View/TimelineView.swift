@@ -14,6 +14,8 @@ struct TimelineView: View {
     @State private var isShowingNewEntryView = false
     
     @State private var scrollTarget: ListSection<MoodEntry>?
+    
+    @State var selectedMood: MoodType?
 
     var body: some View {
         NavigationView {
@@ -54,17 +56,26 @@ struct TimelineView: View {
 
                     MainButton(buttonTitle: "add_mood", buttonAction: {
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        
                         self.isShowingNewEntryView = true
                     }).sheet(isPresented: $isShowingNewEntryView) {
-                        NewEntryMoodView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
+                        NewEntryMoodView(selectedMood: selectedMood, isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
                     }
                     .padding()
                 }
             }
             .navigationBarHidden(true)
             .onOpenURL { url in
-                if url.shouldShowAddMoodSheet {
+                if url.shouldHandleChoosenMood {
+                    self.selectedMood = url.selectedMoodType
+                }
+                
+                if url.shouldShowAddMoodSheet || url.shouldHandleChoosenMood {
                     self.isShowingNewEntryView = true
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        //self.selectedMood = nil
+                    }
                 }
             }
         }

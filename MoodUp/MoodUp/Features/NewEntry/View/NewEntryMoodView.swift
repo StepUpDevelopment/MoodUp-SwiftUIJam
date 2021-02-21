@@ -11,7 +11,7 @@ struct NewEntryMoodView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var isShowingNewEntryCategoryView = false
-    @State private var selectedMood: MoodType?
+    @State var selectedMood: MoodType?
     
     @Binding var isShowingNewEntryView: Bool
 	
@@ -56,6 +56,11 @@ struct NewEntryMoodView: View {
 					}
                     .disabled(selectedMood == nil)
                     .padding()
+                    .onAppear {
+                        if let _ = selectedMood {
+                            self.isShowingNewEntryCategoryView = true
+                        }
+                    }
                     
                     Spacer()
                 }
@@ -69,9 +74,10 @@ struct NewEntryMoodView: View {
             }
         }
         .onOpenURL { url in
-            /*if url.shouldHandleChoosenMood {
-                self.isShowingNewEntryView = true
-            }*/
+            if url.shouldHandleChoosenMood {
+                selectedMood = url.selectedMoodType
+                self.isShowingNewEntryCategoryView = true
+            }
         }
     }
     
