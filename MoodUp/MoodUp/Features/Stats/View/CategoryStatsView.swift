@@ -40,6 +40,7 @@ struct CategoryStatsView: View {
                 }
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 

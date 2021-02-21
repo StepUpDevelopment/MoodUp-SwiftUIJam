@@ -52,7 +52,7 @@
 "new_entry_category_input_placeholder" = "Dear diary...";
 
 // New entry note
-"new_entry_note" = "Write down your feelings";
+"new_entry_note" = "What's on your mind?";
 
 // Entry detail
 "note" = "Note";
