@@ -11,7 +11,7 @@ import SwiftUI
 class NewEntryCategoryViewModel : ObservableObject {
 	
 	@Published var moodCategories: [MoodCategory] = []
-	private var moodType: MoodType
+	var moodType: MoodType
     
     var storageProvider: StorageProvider
     

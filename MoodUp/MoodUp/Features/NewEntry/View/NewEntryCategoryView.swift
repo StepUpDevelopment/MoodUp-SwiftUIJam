@@ -21,7 +21,8 @@ struct NewEntryCategoryView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text("new_entry_category_title")
+                    Text(String(format: NSLocalizedString("new_entry_category_title", comment: ""),
+                                viewModel.moodType.titleKey))
                         .foregroundColor(.primaryForegroundColor)
                         .font(.title)
                         .padding(.leading, 32)
