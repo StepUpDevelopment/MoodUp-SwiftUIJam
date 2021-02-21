@@ -31,7 +31,9 @@ struct TimelineView: View {
 						LazyVStack {
 							//TODO: List<Section> ist zwar Identifiable aber nur mit id: \.self klappt es mit scrollen. Passt das ? 
 							ForEach(viewModel.sections, id: \.self) { section in
-								Text(section.title)
+                                Text(section.title.uppercased())
+                                    .fontWeight(.light)
+                                    .padding(.top)
 								ForEach(section.items, id: \.self) { moodEntry in
 									TimelineCell(moodEntry: moodEntry)
 								}

@@ -15,7 +15,9 @@ struct TimelineCell: View {
     
     init(moodEntry: MoodEntry) {
         self.moodEntry = moodEntry
-        let columnCount = (Double(moodEntry.categories.count) / 2.0).rounded(.up)
+        var columnCount = (Double(moodEntry.categories.count) / 2.0).rounded(.up)
+        let maxColumnCount: Double = 3
+        columnCount = min(columnCount, maxColumnCount)
         var columns: [GridItem] = []
         for _ in 0..<Int(columnCount) {
             columns.append(GridItem(.fixed(30), spacing: 8))
@@ -40,6 +42,8 @@ struct TimelineCell: View {
                         Text(moodEntry.createdDate.relativeOrMediumString())
                             .fontWeight(.light)
                     }
+                    .font(.subheadline)
+                    .foregroundColor(.primaryForegroundColor)
                 }
                 
                 Spacer()
@@ -62,6 +66,8 @@ struct TimelineCell: View {
                         .fontWeight(.light)
                         .lineLimit(1)
                 }
+                .font(.subheadline)
+                .foregroundColor(.primaryForegroundColor)
             }
         }
         .frame(maxWidth: .infinity)
@@ -80,8 +86,14 @@ struct TimelineCell_Previews: PreviewProvider {
             MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney"),
             MoodCategory(identifier: 3, title: "category_friends", iconName: "CategoryFriends")
         ], text: "Feeling good")
-        return TimelineCell(moodEntry: moodEntry)
-            .previewLayout(.sizeThatFits)
-            .padding()
+        return Group {
+            TimelineCell(moodEntry: moodEntry)
+                .previewLayout(.sizeThatFits)
+                .padding()
+            TimelineCell(moodEntry: moodEntry)
+                .previewLayout(.sizeThatFits)
+                .colorScheme(.dark)
+                .padding()
+        }
     }
 }
