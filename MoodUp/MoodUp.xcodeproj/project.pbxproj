@@ -58,6 +58,14 @@
 		A4B3AD5325E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3AD5225E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift */; };
 		A4B3AD5525E27B8F00837E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B3AD5425E27B8F00837E3A /* Assets.xcassets */; };
 		A4B3AD5925E27B8F00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A4B3AD4E25E27B8E00837E3A /* MoodUpWeeklyStatsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A4B3AD6A25E2815600837E3A /* MoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B3AD0125E033880048DD72 /* MoodType.swift */; };
+		A4B3AD6F25E2816C00837E3A /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DCE25E03A680004B4B5 /* Color+Assets.swift */; };
+		A4B3AD7425E2822500837E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B3ACEA25DFF5760048DD72 /* Assets.xcassets */; };
+		A4B3AD7925E282B800837E3A /* SmileyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401B30425E05EB80061CAFD /* SmileyView.swift */; };
+		A4B3AD7E25E2835700837E3A /* LinearGradient+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB08DD125E03EA20004B4B5 /* LinearGradient+Assets.swift */; };
+		A4B3AD8325E28F8000837E3A /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
+		A4B3AD8825E28F9A00837E3A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34B3AD2125E051110048DD72 /* Localizable.strings */; };
+		A4B3AD8E25E29FE800837E3A /* URL+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3AD8D25E29FE800837E3A /* URL+Deeplinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +164,8 @@
 		A4B3AD5225E27B8E00837E3A /* MoodUpWeeklyStatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodUpWeeklyStatsWidget.swift; sourceTree = "<group>"; };
 		A4B3AD5425E27B8F00837E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B3AD5625E27B8F00837E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B3AD6525E27F9D00837E3A /* MoodUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodUp.entitlements; sourceTree = "<group>"; };
+		A4B3AD8D25E29FE800837E3A /* URL+Deeplinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Deeplinks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,7 @@
 				345E03C425E175380044F18A /* SwiftUI */,
 				0AC5297125E1310100B3042F /* NSManagedObject+Name.swift */,
 				0AC5297D25E13F5F00B3042F /* SHA256Digest+String.swift */,
+				A4B3AD8D25E29FE800837E3A /* URL+Deeplinks.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 		34B3ACE525DFF5750048DD72 /* MoodUp */ = {
 			isa = PBXGroup;
 			children = (
+				A4B3AD6525E27F9D00837E3A /* MoodUp.entitlements */,
 				0AC5294C25E114F100B3042F /* Assets */,
 				34B3AD1A25E050E60048DD72 /* SupportingFiles */,
 				0AB08DCD25E03A3F0004B4B5 /* Extensions */,
@@ -671,6 +683,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B3AD7425E2822500837E3A /* Assets.xcassets in Resources */,
+				A4B3AD8825E28F9A00837E3A /* Localizable.strings in Resources */,
 				A4B3AD3E25E2795F00837E3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +732,7 @@
 				345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */,
 				0AB08DD225E03EA20004B4B5 /* LinearGradient+Assets.swift in Sources */,
 				0A28000425E1A0D700C6920D /* Array+Index.swift in Sources */,
+				A4B3AD8E25E29FE800837E3A /* URL+Deeplinks.swift in Sources */,
 				34B3ACE925DFF5750048DD72 /* TimelineView.swift in Sources */,
 				0AC5297225E1310100B3042F /* NSManagedObject+Name.swift in Sources */,
 				0AB08DCF25E03A680004B4B5 /* Color+Assets.swift in Sources */,
@@ -741,6 +756,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B3AD6A25E2815600837E3A /* MoodType.swift in Sources */,
+				A4B3AD7925E282B800837E3A /* SmileyView.swift in Sources */,
+				A4B3AD6F25E2816C00837E3A /* Color+Assets.swift in Sources */,
+				A4B3AD8325E28F8000837E3A /* SelectableButtonStyle.swift in Sources */,
+				A4B3AD7E25E2835700837E3A /* LinearGradient+Assets.swift in Sources */,
 				A4B3AD3C25E2795E00837E3A /* MoodUpMoodChooserWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,6 +965,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoodUp/MoodUp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodUp/Preview Content\"";
@@ -970,6 +991,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MoodUp/MoodUp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"MoodUp/Preview Content\"";

@@ -9,40 +9,87 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> MoodEntry {
+        MoodEntry(date: Date())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(in context: Context, completion: @escaping (MoodEntry) -> ()) {
+        let entry = MoodEntry(date: Date())
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
+        var entries: [MoodEntry] = []
+        let entry = MoodEntry(date: Date())
+        entries.append(entry)
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct MoodEntry: TimelineEntry {
     let date: Date
 }
 
 struct MoodUpMoodChooserWidgetEntryView : View {
+    @Environment(\.widgetFamily) var size
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        switch size {
+            case .systemLarge:
+                ZStack {
+                    Color.mainGradientTop
+                        .ignoresSafeArea()
+                    
+                    VStack {
+                        Spacer()
+                        
+                        Text("How are you feeling?")
+                            .foregroundColor(.primaryForegroundColor)
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            MoodSelectionSmileyView(moodType: .awful)
+                            MoodSelectionSmileyView(moodType: .bad)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            MoodSelectionSmileyView(moodType: .meh)
+                            MoodSelectionSmileyView(moodType: .okay)
+                            MoodSelectionSmileyView(moodType: .good)
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            MoodSelectionSmileyView(moodType: .great)
+                            MoodSelectionSmileyView(moodType: .excellent)
+                        }
+                        
+                        Spacer()
+                    }
+                }
+                .widgetURL(URL(string: "moodupwidget://shouldChooseMood"))
+            @unknown default:
+                Text("Widget not available")
+        }
+    }
+}
+
+struct MoodSelectionSmileyView : View {
+    var moodType: MoodType
+    
+    var body: some View {
+        Link(destination: URL(string: "moodupwidget://didChooseMood/\(moodType.rawValue)")!) {
+            SmileyView(moodType: moodType)
+                .frame(width: 100, height: 80)
+        }
     }
 }
 
@@ -54,6 +101,7 @@ struct MoodUpMoodChooserWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MoodUpMoodChooserWidgetEntryView(entry: entry)
         }
+        .supportedFamilies([.systemLarge])
         .configurationDisplayName("Mood Chooser")
         .description("Select your current mood.")
     }
@@ -61,7 +109,7 @@ struct MoodUpMoodChooserWidget: Widget {
 
 struct MoodUpMoodChooserWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MoodUpMoodChooserWidgetEntryView(entry: SimpleEntry(date: Date()))
+        MoodUpMoodChooserWidgetEntryView(entry: MoodEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

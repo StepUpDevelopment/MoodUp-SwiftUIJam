@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum MoodType: Int, Codable {
+enum MoodType: Int, Codable, CaseIterable {
     case awful = 0
     case bad = 1
     case meh = 2

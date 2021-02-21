@@ -28,6 +28,13 @@ struct TabBarView: View {
                 TabItem(title: "settings", systemImage: "gear")
             }.tag(Tab.settings)
         }
+        .onOpenURL { url in
+            guard let tabIdentifier = url.tabIdentifier else {
+                return
+            }
+
+            selectedTab = tabIdentifier
+        }
         .edgesIgnoringSafeArea(.top)
         .accentColor(.tabbarAccent)
     }

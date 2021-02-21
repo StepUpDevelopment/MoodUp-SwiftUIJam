@@ -68,7 +68,12 @@ struct NewEntryMoodView: View {
 					})
 				)
             }
-		}
+        }
+        .onOpenURL { url in
+            /*if url.shouldHandleChoosenMood {
+                self.isShowingNewEntryView = true
+            }*/
+        }
     }
     
     private func moodButton(moodType: MoodType,

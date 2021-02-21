@@ -58,7 +58,11 @@ struct TimelineView: View {
                 }
                 .padding()
             }
-		}
+		}.onOpenURL { url in
+            if url.shouldShowAddMoodSheet {
+                self.isShowingNewEntryView = true
+            }
+        }
     }
 
     private func handleDaySelected(dayItem: DayItem) {
