@@ -16,7 +16,7 @@ struct NewEntryMoodView: View {
     @Binding var isShowingNewEntryView: Bool
 	
 	var storageProvider: StorageProvider
-    
+	    
     var body: some View {
         NavigationView {
 			ZStack {
@@ -59,6 +59,7 @@ struct NewEntryMoodView: View {
                     
                     Spacer()
                 }
+				
 				.navigationBarItems(trailing:
 					Button(action: {
 						isShowingNewEntryView = false
@@ -67,7 +68,7 @@ struct NewEntryMoodView: View {
 					})
 				)
             }
-        }
+		}
     }
     
     private func moodButton(moodType: MoodType,

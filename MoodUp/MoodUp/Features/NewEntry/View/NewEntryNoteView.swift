@@ -9,34 +9,42 @@ import SwiftUI
 
 struct NewEntryNoteView: View {
     
-	@Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: NewEntryViewModel
-    @State var noteText = NSLocalizedString("new_entry_category_input_placeholder", comment: "")
-	
+    @State var noteText = ""
+    
     var body: some View {
-		NavigationView {
-			ZStack {
-				LinearGradient.main
-					.ignoresSafeArea()
-				
-				VStack {
-					
-					TextEditor(text: $noteText)
-					
-					Spacer()
-				}
-				.foregroundColor(.primaryForegroundColor)
-				.padding()
+        NavigationView {
+            ZStack {
+                LinearGradient.main
+                        .ignoresSafeArea()
+
+                VStack {
+
+                    TextEditor(text: $noteText)
+
+                    Spacer()
+
+                    MainButton(buttonTitle: "save") {
+                        viewModel.moodText = noteText
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                .foregroundColor(.primaryForegroundColor)
+                .padding()
+            }
+			.onAppear {
+				noteText = viewModel.moodText
 			}
-			.navigationBarItems(trailing:
-				Button(action: {
-					presentationMode.wrappedValue.dismiss()					
-				}, label: {
-					Text("cancel")
-				})
-			)
-			.navigationTitle("new_entry_note")
-		}
+            .navigationBarItems(trailing:
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("cancel")
+                })
+            )
+            .navigationTitle("new_entry_note")
+        }
     }
 }
 

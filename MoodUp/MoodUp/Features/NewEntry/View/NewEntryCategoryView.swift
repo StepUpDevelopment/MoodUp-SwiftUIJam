@@ -41,7 +41,7 @@ struct NewEntryCategoryView: View {
                                 .foregroundColor(.primaryForegroundColor)
                                 .padding(.leading, 8)
                             
-                            Text("new_entry_category_input_placeholder")
+                            Text(viewModel.moodText)
                                 .padding(.top, 8)
                                 .padding(.bottom, 8)
                                 .foregroundColor(.primaryForegroundColor)
