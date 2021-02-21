@@ -18,15 +18,21 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            TimelineView(viewModel: TimelineViewModel(storageProvider: storageProvider)).tabItem {
-                TabItem(title: "timeline", systemImage: "house.fill")
-            }.tag(Tab.timeline)
-            StatsView(viewModel: StatsViewModel(storageProvider: storageProvider)).tabItem {
-                TabItem(title: "stats", systemImage: "speedometer")
-            }.tag(Tab.stats)
-            SettingsView().tabItem {
-                TabItem(title: "settings", systemImage: "gear")
-            }.tag(Tab.settings)
+            TimelineView(viewModel: TimelineViewModel(storageProvider: storageProvider))
+                .tabItem {
+                    TabItem(title: "timeline", systemImage: "house.fill")
+                }
+                .tag(Tab.timeline)
+            StatsView(viewModel: StatsViewModel(storageProvider: storageProvider))
+                .tabItem {
+                    TabItem(title: "stats", systemImage: "speedometer")
+                }
+                .tag(Tab.stats)
+            SettingsView()
+                .tabItem {
+                    TabItem(title: "settings", systemImage: "gear")
+                }
+                .tag(Tab.settings)
         }
         .onOpenURL { url in
             guard let tabIdentifier = url.tabIdentifier else {

@@ -28,7 +28,11 @@ struct StatsView: View {
 						spacing: 16
 					) {
 						ForEach(viewModel.categoryStatistics, id: \.id) { statistic in
-							CategoryStatsGridItemView(statistic: statistic)
+                            NavigationLink(
+                                destination: CategoryStatsView(category: statistic.moodCategory),
+                                label: {
+                                    CategoryStatsGridItemView(statistic: statistic)
+                                })
 						}
 					}
 					.padding([.all])

@@ -20,7 +20,8 @@ struct CategoryStatsGridItemView: View {
 					.resizable()
 					.frame(width: 64.0, height: 64.0)
 			}
-			Text(LocalizedStringKey(statistic.moodCategory.title))				
+			Text(LocalizedStringKey(statistic.moodCategory.title))
+                .foregroundColor(.primaryForegroundColor)
 		}
 		.clipped()
 		.aspectRatio(1, contentMode: .fit)
