@@ -16,8 +16,18 @@ struct MoodEntryDetailView: View {
             LinearGradient.main
                 .ignoresSafeArea()
             
-            
-        }
+            VStack {
+                HStack {
+                    SmileyView(moodType: moodEntry.moodType)
+                        .frame(width: 50, height: 50)
+                    Text(LocalizedStringKey(moodEntry.moodType.titleKey))
+                        .foregroundColor(.primary)
+                        .font(.title)
+                        .fontWeight(.medium)
+                }
+                Spacer()
+            }
+        }.navigationBarTitle("", displayMode: .inline)
     }
 }
 

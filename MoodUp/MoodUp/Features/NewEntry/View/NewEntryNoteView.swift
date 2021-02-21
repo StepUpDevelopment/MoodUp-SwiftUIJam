@@ -20,7 +20,9 @@ struct NewEntryNoteView: View {
                         .ignoresSafeArea()
 
                 VStack {
-
+                    Text("new_entry_note")
+                        .font(.title)
+                    
                     TextEditor(text: $noteText)
 
                     Spacer()
@@ -43,7 +45,7 @@ struct NewEntryNoteView: View {
                     Text("cancel")
                 })
             )
-            .navigationTitle("new_entry_note")
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }

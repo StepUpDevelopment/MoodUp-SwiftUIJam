@@ -26,6 +26,11 @@ struct MoodUpApp: App {
     }
     
     private func setupAppStyles() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().tintColor = UIColor(Color.primaryForegroundColor)
         UITextView.appearance().backgroundColor = .clear
     }

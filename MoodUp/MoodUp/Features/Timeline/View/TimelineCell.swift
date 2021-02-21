@@ -31,7 +31,7 @@ struct TimelineCell: View {
                 HStack {
                     SmileyView(moodType: moodEntry.moodType)
                         .frame(width: 30, height: 30)
-                    Text(moodEntry.moodType.titleKey)
+                    Text(LocalizedStringKey(moodEntry.moodType.titleKey))
                         .foregroundColor(.primary)
                         .font(.headline)
                 }
