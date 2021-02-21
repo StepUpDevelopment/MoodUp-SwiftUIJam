@@ -22,6 +22,8 @@ struct CategoryStatsGridItemView: View {
 			}
 			Text(LocalizedStringKey(statistic.moodCategory.title))				
 		}
+		.clipped()
+		.aspectRatio(1, contentMode: .fit)
 		.padding()
 		.background(Color.selectableButtonBackground)
 		.embedInCardView()

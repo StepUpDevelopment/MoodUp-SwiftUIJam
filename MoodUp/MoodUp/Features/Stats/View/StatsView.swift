@@ -13,8 +13,8 @@ struct StatsView: View {
 	@ObservedObject var viewModel: StatsViewModel
 	
 	var columns: [GridItem] = [
-			GridItem(.fixed(175), spacing: 16),
-			GridItem(.fixed(175), spacing: 16),
+			GridItem(.flexible(minimum: 40), spacing: 16),
+			GridItem(.flexible(minimum: 40), spacing: 16),
 		]
 	
     var body: some View {
@@ -30,10 +30,9 @@ struct StatsView: View {
 					) {
 						ForEach(viewModel.categorieStatistics, id: \.id) { statistic in
 							CategoryStatsGridItemView(statistic: statistic)
-								.frame(height: 175)
 						}
 					}
-					.padding([.top])
+					.padding([.all])
 				}
 				.navigationTitle("stats")
 			}
