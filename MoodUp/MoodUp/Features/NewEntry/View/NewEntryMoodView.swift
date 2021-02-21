@@ -11,6 +11,7 @@ struct NewEntryMoodView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var isShowingNewEntryCategoryView = false
+    
     @State var selectedMood: MoodType?
     
     @Binding var isShowingNewEntryView: Bool

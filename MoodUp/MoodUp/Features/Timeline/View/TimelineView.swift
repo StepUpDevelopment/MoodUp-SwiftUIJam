@@ -56,10 +56,9 @@ struct TimelineView: View {
 
                     MainButton(buttonTitle: "add_mood", buttonAction: {
                         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                        
                         self.isShowingNewEntryView = true
                     }).sheet(isPresented: $isShowingNewEntryView) {
-                        NewEntryMoodView(selectedMood: selectedMood, isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
+                        NewEntryMoodView(selectedMood: self.selectedMood, isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
                     }
                     .padding()
                 }
@@ -72,10 +71,6 @@ struct TimelineView: View {
                 
                 if url.shouldShowAddMoodSheet || url.shouldHandleChoosenMood {
                     self.isShowingNewEntryView = true
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        //self.selectedMood = nil
-                    }
                 }
             }
         }
