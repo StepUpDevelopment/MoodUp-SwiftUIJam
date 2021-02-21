@@ -11,6 +11,12 @@ struct MoodEntryDetailView: View {
     
     var moodEntry: MoodEntry
     
+    var columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         ZStack {
             LinearGradient.main
@@ -32,9 +38,21 @@ struct MoodEntryDetailView: View {
                     }
                     .padding()
                     
-                    MoodEntryDetailCategoryGridView(categories: moodEntry.categories) { selectedCategory in
-                        print("Category selected")
+                    LazyVGrid(
+                        columns: columns,
+                        alignment: .center,
+                        spacing: 8
+                    ) {
+                        ForEach(moodEntry.categories) { category in
+                            NavigationLink(
+                                destination: CategoryStatsView(category: category),
+                                label: {
+                                    MoodEntryDetailCategoryGridItemView(category: category)
+                                })
+                        }
                     }
+                    .padding([.leading, .trailing], 30)
+                    .padding(.bottom, 16)
                     
                     if let moodNote = moodEntry.text {
                         HStack {

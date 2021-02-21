@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MoodEntryDetailCategoryGridView: View {
+struct MoodEntryDetailCategoryGridItemView: View {
     
     var categories: [MoodCategory]
     
@@ -56,7 +56,7 @@ struct MoodEntryDetailCategoryGridView: View {
 
 struct MoodEntryDetailCategoryGridView_Previews: PreviewProvider {
     static var previews: some View {
-        MoodEntryDetailCategoryGridView(categories: [
+        MoodEntryDetailCategoryGridItemView(categories: [
             MoodCategory(identifier: 1, title: "category_family", iconName: "CategoryFamily"),
             MoodCategory(identifier: 2, title: "category_money", iconName: "CategoryMoney"),
             MoodCategory(identifier: 3, title: "category_friends", iconName: "CategoryFriends"),

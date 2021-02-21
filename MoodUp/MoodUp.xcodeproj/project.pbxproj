@@ -25,7 +25,10 @@
 		3406F5D125E265AC004C31E8 /* NewEntryCategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5D025E265AC004C31E8 /* NewEntryCategoryGridView.swift */; };
 		3406F5D525E2661D004C31E8 /* NewEntryNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5D425E2661D004C31E8 /* NewEntryNoteView.swift */; };
 		3406F5E425E2866C004C31E8 /* MoodEntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */; };
-		3406F5ED25E29D21004C31E8 /* MoodEntryDetailCategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridView.swift */; };
+		3406F5ED25E29D21004C31E8 /* MoodEntryDetailCategoryGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridItemView.swift */; };
+		3406F5F325E29F0C004C31E8 /* CategoryStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5F225E29F0C004C31E8 /* CategoryStatsView.swift */; };
+		3406F5F925E29F48004C31E8 /* CategoryStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5F825E29F48004C31E8 /* CategoryStatsViewModel.swift */; };
+		3406F60325E2A077004C31E8 /* MoodCategory+Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F60225E2A077004C31E8 /* MoodCategory+Statistics.swift */; };
 		345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
 		345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */; };
 		345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */; };
@@ -131,7 +134,10 @@
 		3406F5D025E265AC004C31E8 /* NewEntryCategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryCategoryGridView.swift; sourceTree = "<group>"; };
 		3406F5D425E2661D004C31E8 /* NewEntryNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryNoteView.swift; sourceTree = "<group>"; };
 		3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryDetailView.swift; sourceTree = "<group>"; };
-		3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryDetailCategoryGridView.swift; sourceTree = "<group>"; };
+		3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryDetailCategoryGridItemView.swift; sourceTree = "<group>"; };
+		3406F5F225E29F0C004C31E8 /* CategoryStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStatsView.swift; sourceTree = "<group>"; };
+		3406F5F825E29F48004C31E8 /* CategoryStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStatsViewModel.swift; sourceTree = "<group>"; };
+		3406F60225E2A077004C31E8 /* MoodCategory+Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodCategory+Statistics.swift"; sourceTree = "<group>"; };
 		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingWeekView.swift; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				0A28002225E1CBDB00C6920D /* StatsViewModel.swift */,
+				3406F5F825E29F48004C31E8 /* CategoryStatsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -420,6 +427,7 @@
 				34B3AD0825E034380048DD72 /* MoodCategory.swift */,
 				34B3AD0B25E035200048DD72 /* MoodEntry+CoreData.swift */,
 				0AB08DCA25E0368B0004B4B5 /* MoodCategory+CoreData.swift */,
+				3406F60225E2A077004C31E8 /* MoodCategory+Statistics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,7 +455,7 @@
 				345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */,
 				345E03D225E18EF00044F18A /* TimelineCell.swift */,
 				3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */,
-				3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridView.swift */,
+				3406F5EC25E29D20004C31E8 /* MoodEntryDetailCategoryGridItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +521,7 @@
 				A428042225E066200013D161 /* StatsView.swift */,
 				0A28001925E1BB9400C6920D /* PieChart.swift */,
 				0A28002825E1CEB900C6920D /* CategoryStatsGridItemView.swift */,
+				3406F5F225E29F0C004C31E8 /* CategoryStatsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -723,6 +732,7 @@
 				34B3AD0925E034380048DD72 /* MoodCategory.swift in Sources */,
 				34B3AD2A25E058AC0048DD72 /* NewEntryMoodView.swift in Sources */,
 				345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */,
+				3406F5F925E29F48004C31E8 /* CategoryStatsViewModel.swift in Sources */,
 				0AB08DCB25E0368B0004B4B5 /* MoodCategory+CoreData.swift in Sources */,
 				345E03C725E175520044F18A /* View+CardView.swift in Sources */,
 				0AC5295325E116A600B3042F /* CategoryImporter.swift in Sources */,
@@ -730,6 +740,7 @@
 				A401B30525E05EB80061CAFD /* MainButton.swift in Sources */,
 				345E03D925E1920F0044F18A /* Date+Formatting.swift in Sources */,
 				345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */,
+				3406F5F325E29F0C004C31E8 /* CategoryStatsView.swift in Sources */,
 				0A28002325E1CBDB00C6920D /* StatsViewModel.swift in Sources */,
 				A428042325E066200013D161 /* StatsView.swift in Sources */,
 				34B3ACFC25E02F440048DD72 /* MoodUp.xcdatamodeld in Sources */,
@@ -745,6 +756,7 @@
 				3406F5D125E265AC004C31E8 /* NewEntryCategoryGridView.swift in Sources */,
 				3406F5D525E2661D004C31E8 /* NewEntryNoteView.swift in Sources */,
 				34B3AD1025E03B0E0048DD72 /* StorageProvider.swift in Sources */,
+				3406F60325E2A077004C31E8 /* MoodCategory+Statistics.swift in Sources */,
 				34B3AD0625E034000048DD72 /* MoodEntry.swift in Sources */,
 				34B3AD0C25E035200048DD72 /* MoodEntry+CoreData.swift in Sources */,
 				0A28001A25E1BB9400C6920D /* PieChart.swift in Sources */,
@@ -756,7 +768,7 @@
 				345E03D325E18EF00044F18A /* TimelineCell.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,
 				A401B30625E05EB80061CAFD /* SmileyView.swift in Sources */,
-				3406F5ED25E29D21004C31E8 /* MoodEntryDetailCategoryGridView.swift in Sources */,
+				3406F5ED25E29D21004C31E8 /* MoodEntryDetailCategoryGridItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

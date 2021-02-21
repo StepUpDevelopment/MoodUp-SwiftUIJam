@@ -11,7 +11,7 @@ import Combine
 class StatsViewModel: ObservableObject {
 	
 	private var storageProvider: StorageProvider
-	@Published var categorieStatistics: [CategoryStatistic] = []
+	@Published var categoryStatistics: [CategoryStatistic] = []
 	private var cancellable = Set<AnyCancellable>()
 	
 	init(storageProvider: StorageProvider) {
@@ -34,19 +34,13 @@ class StatsViewModel: ObservableObject {
 		var localStatistics: [CategoryStatistic] = []
 		let categories = storageProvider.getAllCategories()
 		categories.forEach { category in
-			let results = Dictionary(grouping: category.moodCategories ?? [], by: { (element: MoodEntry) in
-				return element.moodType
-			})
-			var moodTypes: [MoodTypeValue] = []
-			results.keys.forEach { key in
-				moodTypes.append(MoodTypeValue(type: key, value: Double(results[key]!.count)))
-			}
-			if !moodTypes.isEmpty {
-				localStatistics.append(CategoryStatistic(moodCategory: category, moodTypeValues: moodTypes))
+            if let categoryStatistic = category.statistic {
+				localStatistics.append(categoryStatistic)
 			}
 		}
-		categorieStatistics = localStatistics
+		categoryStatistics = localStatistics
 	}
+    
 }
 
 struct CategoryStatistic :  Identifiable {

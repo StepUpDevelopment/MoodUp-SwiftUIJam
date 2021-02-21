@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StatsView: View {
 	
-		
 	@ObservedObject var viewModel: StatsViewModel
 	
 	var columns: [GridItem] = [
@@ -28,7 +27,7 @@ struct StatsView: View {
 						alignment: .center,
 						spacing: 16
 					) {
-						ForEach(viewModel.categorieStatistics, id: \.id) { statistic in
+						ForEach(viewModel.categoryStatistics, id: \.id) { statistic in
 							CategoryStatsGridItemView(statistic: statistic)
 						}
 					}

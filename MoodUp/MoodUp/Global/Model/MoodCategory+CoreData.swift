@@ -32,7 +32,7 @@ extension DbMoodCategory {
 			identifier: Int(identifier),
 			title: title ?? "",
 			iconName: iconName ?? "",
-			moodCategories: Array(entries).map { $0.moodEntry(withoutCategory: true) }
+			moodEntries: Array(entries).map { $0.moodEntry(withoutCategory: true) }
 		)
 		return moodCategory
 	}
