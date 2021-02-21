@@ -21,10 +21,11 @@ extension Color {
 	static let primaryForegroundColor = Color("PrimaryForegroundColor")
     static let primaryButtonForeground = Color("PrimaryButtonForeground")
 	static let primaryForegroundColorInactive = Color("PrimaryForegroundColorInactive")
+    static let smileyForeground = Color("SmileyForeground")
 	
 	static let mainGradientBottom = Color("MainGradientBottom")
 	static let mainGradientTop = Color("MainGradientTop")
-    static let selectableButtonBackground = Color("SelectableButtonBackground")
+    static let secondaryBackground = Color("SecondaryBackground")
     static let primaryShadow = Color("PrimaryShadow")
     static let tabbarAccent = Color("TabbarAccent")
 

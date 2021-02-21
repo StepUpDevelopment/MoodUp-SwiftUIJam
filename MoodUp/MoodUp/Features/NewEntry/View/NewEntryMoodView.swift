@@ -59,7 +59,6 @@ struct NewEntryMoodView: View {
                     
                     Spacer()
                 }
-				
 				.navigationBarItems(trailing:
 					Button(action: {
 						isShowingNewEntryView = false

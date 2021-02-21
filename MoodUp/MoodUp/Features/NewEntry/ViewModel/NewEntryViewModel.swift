@@ -25,7 +25,13 @@ class NewEntryViewModel : ObservableObject {
 	}
 	
     func save() {
-        let moodEntry = MoodEntry(moodType: moodType, categories: selectedMoodCategories, text: moodText)
+        let moodNote: String?
+        if moodText == NSLocalizedString("new_entry_category_input_placeholder", comment: "") {
+            moodNote = nil
+        } else {
+            moodNote = moodText
+        }
+        let moodEntry = MoodEntry(moodType: moodType, categories: selectedMoodCategories, text: moodNote)
         storageProvider.saveEntry(moodEntry: moodEntry)
     }
 }
