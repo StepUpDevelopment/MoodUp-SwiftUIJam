@@ -50,7 +50,7 @@ struct NewEntryCategoryView: View {
                             Spacer()
                         }
                         .frame(width: geometry.size.width - 76, height: 68)
-                        .background(Color.selectableButtonBackground)
+                        .background(Color.secondaryBackground)
                         .cornerRadius(8)
                     })
                       

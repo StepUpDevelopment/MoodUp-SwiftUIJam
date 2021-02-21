@@ -53,3 +53,6 @@
 
 // New entry note
 "new_entry_note" = "Write down your feelings";
+
+// Entry detail
+"note" = "Note";

@@ -25,7 +25,7 @@ struct CategoryStatsGridItemView: View {
 		.clipped()
 		.aspectRatio(1, contentMode: .fit)
 		.padding()
-		.background(Color.selectableButtonBackground)
+		.background(Color.secondaryBackground)
 		.embedInCardView()
 	}
 	

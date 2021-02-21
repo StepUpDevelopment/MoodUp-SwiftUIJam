@@ -27,7 +27,7 @@ struct SelectableButtonStyle: ButtonStyle {
                 .foregroundColor(.primaryForegroundColor)
                 .font(.subheadline)
                 .padding()
-                .background(Color.selectableButtonBackground)
+                .background(Color.secondaryBackground)
                 .cornerRadius(8)
                 .frame(width: 100, height: 120)
                 .overlay(

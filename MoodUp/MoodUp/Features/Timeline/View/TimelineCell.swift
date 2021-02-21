@@ -72,7 +72,7 @@ struct TimelineCell: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.selectableButtonBackground)
+        .background(Color.secondaryBackground)
         .embedInCardView()
         .padding([.top, .leading, .trailing])
     }
