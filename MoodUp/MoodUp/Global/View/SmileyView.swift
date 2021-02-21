@@ -21,7 +21,7 @@ struct SmileyView: View {
 			moodType.icon.renderingMode(.template)
 				.resizable()
 				.aspectRatio(contentMode: .fit)
-				.foregroundColor(.primaryForegroundColor)
+				.foregroundColor(.smileyForeground)
 		}
 	}
 }

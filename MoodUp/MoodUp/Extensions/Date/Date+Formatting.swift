@@ -37,6 +37,12 @@ extension Date {
 		return dateFormatter.string(from: self)
 	}
     
+    func mediumAndTimeString(locale: Locale = .current) -> String {
+        let medium = mediumString(locale: locale)
+        let time = timeString(locale: locale)
+        return "\(medium), \(time)"
+    }
+    
     func relativeOrMediumString(locale: Locale = .current, currentDate: Date = Date()) -> String {
         let secondsPerDay = 3600 * 24
         

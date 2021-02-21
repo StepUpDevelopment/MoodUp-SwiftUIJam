@@ -17,18 +17,25 @@ struct MoodEntryDetailView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HStack {
+                HStack(spacing: 16) {
                     SmileyView(moodType: moodEntry.moodType)
                         .frame(width: 50, height: 50)
-                    Text(LocalizedStringKey(moodEntry.moodType.titleKey))
-                        .foregroundColor(.primary)
-                        .font(.title)
-                        .fontWeight(.medium)
+                    VStack(alignment: .leading) {
+                        Text(LocalizedStringKey(moodEntry.moodType.titleKey))
+                            .foregroundColor(.primary)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        Text(moodEntry.createdDate.mediumAndTimeString())
+                    }
                 }
+                .padding()
+                
                 Spacer()
             }
         }.navigationBarTitle("", displayMode: .inline)
     }
+    
 }
 
 struct MoodEntryDetailView_Previews: PreviewProvider {
