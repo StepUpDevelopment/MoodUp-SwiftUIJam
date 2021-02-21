@@ -38,6 +38,28 @@ struct MoodUpMoodChooserWidgetEntryView : View {
 
     var body: some View {
         switch size {
+			case .systemMedium:
+				ZStack {
+					Color.mainGradientTop
+						.ignoresSafeArea()
+					VStack {
+						HStack(alignment: .center) {
+							Spacer()
+							MoodSelectionSmileyViewSmall(moodType: .awful)
+							MoodSelectionSmileyViewSmall(moodType: .bad)
+							MoodSelectionSmileyViewSmall(moodType: .meh)
+							Spacer()
+						}
+						Text("How are you right now?")
+							.foregroundColor(.primaryForegroundColor)
+						HStack(alignment: .center) {
+							MoodSelectionSmileyViewSmall(moodType: .okay)
+							MoodSelectionSmileyViewSmall(moodType: .good)
+							MoodSelectionSmileyViewSmall(moodType: .great)
+							MoodSelectionSmileyViewSmall(moodType: .excellent)
+						}
+					}.padding()
+				}
             case .systemLarge:
                 ZStack {
                     Color.mainGradientTop
@@ -46,7 +68,7 @@ struct MoodUpMoodChooserWidgetEntryView : View {
                     VStack {
                         Spacer()
                         
-                        Text("How are you feeling?")
+                        Text("How are you right now?")
                             .foregroundColor(.primaryForegroundColor)
                             .font(.title)
                         
@@ -93,6 +115,16 @@ struct MoodSelectionSmileyView : View {
     }
 }
 
+struct MoodSelectionSmileyViewSmall : View {
+	var moodType: MoodType
+	
+	var body: some View {
+		Link(destination: URL(string: "moodupwidget://didChooseMood/\(moodType.rawValue)")!) {
+			SmileyView(moodType: moodType)
+		}
+	}
+}
+
 @main
 struct MoodUpMoodChooserWidget: Widget {
     let kind: String = "MoodUpMoodChooserWidget"
@@ -101,7 +133,7 @@ struct MoodUpMoodChooserWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MoodUpMoodChooserWidgetEntryView(entry: entry)
         }
-        .supportedFamilies([.systemLarge])
+		.supportedFamilies([.systemLarge, .systemMedium])
         .configurationDisplayName("Mood Chooser")
         .description("Select your current mood.")
     }
