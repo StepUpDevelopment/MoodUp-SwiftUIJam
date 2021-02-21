@@ -54,7 +54,7 @@ struct TimelineView: View {
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     self.isShowingNewEntryView = true
                 }).sheet(isPresented: $isShowingNewEntryView) {
-                    NewEntryView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
+                    NewEntryMoodView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
                 }
                 .padding()
             }

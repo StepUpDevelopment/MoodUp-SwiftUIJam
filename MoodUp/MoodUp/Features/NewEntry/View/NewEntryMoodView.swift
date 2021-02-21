@@ -1,5 +1,5 @@
 //
-//  NewEntryView.swift
+//  NewEntryMoodView.swift
 //  MoodUp
 //
 //  Created by Nicolas Spinner on 19.02.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewEntryView: View {
+struct NewEntryMoodView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var isShowingNewEntryCategoryView = false
@@ -24,7 +24,6 @@ struct NewEntryView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Spacer()
                     Text("new_entry_title")
                         .foregroundColor(.primaryForegroundColor)
                         .font(.title)
@@ -42,10 +41,10 @@ struct NewEntryView: View {
                         moodButton(moodType: .great, title: "great")
                         moodButton(moodType: .excellent, title: "excellent")
                     }
-                    Spacer()					
+                    Spacer()
 					if let selectedMood = selectedMood {
 						NavigationLink(destination: NewEntryCategoryView(
-                            isShowingNewEntryView: self.$isShowingNewEntryView, viewModel: NewEntryCategoryViewModel(moodType: selectedMood, storageProvider: storageProvider)
+                            isShowingNewEntryView: self.$isShowingNewEntryView, viewModel: NewEntryViewModel(moodType: selectedMood, storageProvider: storageProvider)
 						), isActive: $isShowingNewEntryCategoryView) {}
 					}
 					
@@ -57,6 +56,8 @@ struct NewEntryView: View {
 					}
                     .disabled(selectedMood == nil)
                     .padding()
+                    
+                    Spacer()
                 }
             }
         }.navigationBarHidden(true)
@@ -78,6 +79,6 @@ struct NewEntryView: View {
 
 struct NewEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        NewEntryView(isShowingNewEntryView: .constant(true), storageProvider: StorageProvider(inMemory: true))
+        NewEntryMoodView(isShowingNewEntryView: .constant(true), storageProvider: StorageProvider(inMemory: true))
     }
 }

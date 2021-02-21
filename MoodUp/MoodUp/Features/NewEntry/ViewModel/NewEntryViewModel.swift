@@ -1,5 +1,5 @@
 //
-//  NewEntryCategoryViewModel.swift
+//  NewEntryViewModel.swift
 //  MoodUp
 //
 //  Created by Manuel Kunz on 20.02.21.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class NewEntryCategoryViewModel : ObservableObject {
+class NewEntryViewModel : ObservableObject {
 	
 	@Published var moodCategories: [MoodCategory] = []
 	var moodType: MoodType
