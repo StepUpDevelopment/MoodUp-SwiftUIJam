@@ -38,7 +38,7 @@ struct TimelineCell: View {
                     .padding(.bottom, 8)
                     
                     HStack {
-                        Image(systemName: "applewatch.watchface")
+                        Image(systemName: "clock")
                         Text(moodEntry.createdDate.relativeOrMediumString())
                             .fontWeight(.light)
                     }
@@ -61,7 +61,7 @@ struct TimelineCell: View {
             
             if let moodText = moodEntry.text {
                 HStack {
-                    Image(systemName: "pencil.tip")
+                    Image(systemName: "pencil")
                     Text(moodText)
                         .fontWeight(.light)
                         .lineLimit(1)
