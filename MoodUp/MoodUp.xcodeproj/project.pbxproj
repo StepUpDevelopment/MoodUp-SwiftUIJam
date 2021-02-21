@@ -24,6 +24,7 @@
 		0AC5298625E1421000B3042F /* NewEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5298525E1421000B3042F /* NewEntryViewModel.swift */; };
 		3406F5D125E265AC004C31E8 /* NewEntryCategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5D025E265AC004C31E8 /* NewEntryCategoryGridView.swift */; };
 		3406F5D525E2661D004C31E8 /* NewEntryNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5D425E2661D004C31E8 /* NewEntryNoteView.swift */; };
+		3406F5E425E2866C004C31E8 /* MoodEntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */; };
 		345ADB6225E1240F00B7AE24 /* SelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */; };
 		345ADB6825E12A6100B7AE24 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */; };
 		345ADB6E25E12DAA00B7AE24 /* ScrollingWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */; };
@@ -120,6 +121,7 @@
 		0AC5298525E1421000B3042F /* NewEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewModel.swift; sourceTree = "<group>"; };
 		3406F5D025E265AC004C31E8 /* NewEntryCategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryCategoryGridView.swift; sourceTree = "<group>"; };
 		3406F5D425E2661D004C31E8 /* NewEntryNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryNoteView.swift; sourceTree = "<group>"; };
+		3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryDetailView.swift; sourceTree = "<group>"; };
 		345ADB6125E1240F00B7AE24 /* SelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButtonStyle.swift; sourceTree = "<group>"; };
 		345ADB6725E12A6100B7AE24 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingWeekView.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				34B3ACE825DFF5750048DD72 /* TimelineView.swift */,
 				345ADB6D25E12DAA00B7AE24 /* ScrollingWeekView.swift */,
 				345E03D225E18EF00044F18A /* TimelineCell.swift */,
+				3406F5E325E2866C004C31E8 /* MoodEntryDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				0A28FFFF25E19F1F00C6920D /* ListSection.swift in Sources */,
 				34B3AD0225E033880048DD72 /* MoodType.swift in Sources */,
 				A428042925E12BCC0013D161 /* NewEntryCategoryView.swift in Sources */,
+				3406F5E425E2866C004C31E8 /* MoodEntryDetailView.swift in Sources */,
 				34B3AD1725E04FBE0048DD72 /* TabBarView.swift in Sources */,
 				345E03D325E18EF00044F18A /* TimelineCell.swift in Sources */,
 				34B3ACE725DFF5750048DD72 /* MoodUpApp.swift in Sources */,

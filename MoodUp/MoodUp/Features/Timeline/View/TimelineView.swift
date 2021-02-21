@@ -16,49 +16,54 @@ struct TimelineView: View {
     @State private var scrollTarget: ListSection<MoodEntry>?
 
     var body: some View {
-		ZStack {
-			LinearGradient.main
-				.ignoresSafeArea()
-
-            VStack {
-                ScrollingWeekView { dayItem in
-                    handleDaySelected(dayItem: dayItem)
+        NavigationView {
+            ZStack {
+                LinearGradient.main
+                    .ignoresSafeArea()
+                
+                VStack {
+                    ScrollingWeekView { dayItem in
+                        handleDaySelected(dayItem: dayItem)
+                    }
+                    .frame(height: 80)
+                    
+                    ScrollView {
+                        ScrollViewReader { reader in
+                            LazyVStack {
+                                //TODO: List<Section> ist zwar Identifiable aber nur mit id: \.self klappt es mit scrollen. Passt das ?
+                                ForEach(viewModel.sections, id: \.self) { section in
+                                    Text(section.title.uppercased())
+                                        .fontWeight(.light)
+                                        .padding(.top)
+                                    ForEach(section.items, id: \.self) { moodEntry in
+                                        NavigationLink(destination: MoodEntryDetailView(moodEntry: moodEntry)) {
+                                            TimelineCell(moodEntry: moodEntry)
+                                        }
+                                    }
+                                }
+                            }
+                            .onChange(of: scrollTarget) { value in
+                                if let targetEntry = scrollTarget {
+                                    scrollTarget = nil
+                                    withAnimation {
+                                        reader.scrollTo(targetEntry, anchor: .top)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    MainButton(buttonTitle: "add_mood", buttonAction: {
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        self.isShowingNewEntryView = true
+                    }).sheet(isPresented: $isShowingNewEntryView) {
+                        NewEntryMoodView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
+                    }
+                    .padding()
                 }
-                .frame(height: 80)
-
-                ScrollView {
-					ScrollViewReader { reader in
-						LazyVStack {
-							//TODO: List<Section> ist zwar Identifiable aber nur mit id: \.self klappt es mit scrollen. Passt das ? 
-							ForEach(viewModel.sections, id: \.self) { section in
-                                Text(section.title.uppercased())
-                                    .fontWeight(.light)
-                                    .padding(.top)
-								ForEach(section.items, id: \.self) { moodEntry in
-									TimelineCell(moodEntry: moodEntry)
-								}
-							}
-						}
-						.onChange(of: scrollTarget) { value in
-							if let targetEntry = scrollTarget {
-								scrollTarget = nil
-								withAnimation {
-									reader.scrollTo(targetEntry, anchor: .top)
-								}
-							}
-						}
-					}
-                }
-
-                MainButton(buttonTitle: "add_mood", buttonAction: {
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    self.isShowingNewEntryView = true
-                }).sheet(isPresented: $isShowingNewEntryView) {
-                    NewEntryMoodView(isShowingNewEntryView: self.$isShowingNewEntryView, storageProvider: viewModel.storageProvider)
-                }
-                .padding()
             }
-		}
+            .navigationBarHidden(true)
+        }
     }
 
     private func handleDaySelected(dayItem: DayItem) {

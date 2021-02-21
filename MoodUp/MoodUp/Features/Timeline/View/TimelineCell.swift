@@ -32,6 +32,7 @@ struct TimelineCell: View {
                     SmileyView(moodType: moodEntry.moodType)
                         .frame(width: 30, height: 30)
                     Text(moodEntry.moodType.titleKey)
+                        .foregroundColor(.primary)
                         .font(.headline)
                 }
                 .padding(.bottom, 8)
