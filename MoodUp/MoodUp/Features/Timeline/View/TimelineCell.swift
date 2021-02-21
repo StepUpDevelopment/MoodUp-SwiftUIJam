@@ -26,48 +26,47 @@ struct TimelineCell: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        SmileyView(moodType: moodEntry.moodType)
-                            .frame(width: 30, height: 30)
-                        Text(moodEntry.moodType.titleKey)
-                            .font(.headline)
-                    }
-                    .padding(.bottom, 8)
-                    
-                    HStack {
-                        Image(systemName: "clock")
-                        Text(moodEntry.createdDate.relativeOrMediumString())
-                            .fontWeight(.light)
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(.primaryForegroundColor)
-                }
-                
-                Spacer()
-                
-                LazyVGrid(
-                    columns: columns,
-                    alignment: .trailing,
-                    spacing: 8
-                ) {
-                    ForEach(moodEntry.categories) { category in
-                        Image(category.iconName)
-                    }
-                }
-            }
-            
-            if let moodText = moodEntry.text {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading) {
                 HStack {
-                    Image(systemName: "pencil")
-                    Text(moodText)
+                    SmileyView(moodType: moodEntry.moodType)
+                        .frame(width: 30, height: 30)
+                    Text(moodEntry.moodType.titleKey)
+                        .font(.headline)
+                }
+                .padding(.bottom, 8)
+                
+                HStack {
+                    Image(systemName: "clock")
+                    Text(moodEntry.createdDate.relativeOrMediumString())
                         .fontWeight(.light)
-                        .lineLimit(1)
                 }
                 .font(.subheadline)
                 .foregroundColor(.primaryForegroundColor)
+                
+                if let moodText = moodEntry.text {
+                    HStack {
+                        Image(systemName: "pencil")
+                        Text(moodText)
+                            .fontWeight(.light)
+                            .lineLimit(2)
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.primaryForegroundColor)
+                    .padding(.top, 8)
+                }
+            }
+            
+            Spacer()
+            
+            LazyVGrid(
+                columns: columns,
+                alignment: .trailing,
+                spacing: 8
+            ) {
+                ForEach(moodEntry.categories) { category in
+                    Image(category.iconName)
+                }
             }
         }
         .frame(maxWidth: .infinity)
