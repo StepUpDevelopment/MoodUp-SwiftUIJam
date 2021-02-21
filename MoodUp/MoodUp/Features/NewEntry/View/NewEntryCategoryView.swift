@@ -41,7 +41,7 @@ struct NewEntryCategoryView: View {
                                 .foregroundColor(.primaryForegroundColor)
                                 .padding(.leading, 8)
                             
-                            Text("new_entry_category_input_placeholder")
+                            Text(viewModel.moodText)
                                 .padding(.top, 8)
                                 .padding(.bottom, 8)
                                 .foregroundColor(.primaryForegroundColor)
@@ -55,10 +55,6 @@ struct NewEntryCategoryView: View {
                     })
                       
                     MainButton(buttonTitle: "save") {
-                        if self.inputText != NSLocalizedString("new_entry_category_input_placeholder", comment: "") {
-                            viewModel.moodText = self.inputText
-                        }
-                        
                         viewModel.save()
                         
                         UINotificationFeedbackGenerator().notificationOccurred(.success)

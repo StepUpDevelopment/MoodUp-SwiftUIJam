@@ -9,8 +9,9 @@ import SwiftUI
 
 struct NewEntryNoteView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: NewEntryViewModel
-    @State var noteText = NSLocalizedString("new_entry_category_input_placeholder", comment: "")
+    @State var noteText = ""
     
     var body: some View {
         ZStack {
@@ -24,9 +25,17 @@ struct NewEntryNoteView: View {
                 TextEditor(text: $noteText)
                 
                 Spacer()
+                
+                MainButton(buttonTitle: "save") {
+                    viewModel.moodText = noteText
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
             .foregroundColor(.primaryForegroundColor)
             .padding()
+        }
+        .onAppear {
+            noteText = viewModel.moodText
         }
     }
 }
