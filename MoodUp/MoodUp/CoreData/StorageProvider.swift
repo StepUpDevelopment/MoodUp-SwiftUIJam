@@ -13,7 +13,7 @@ class StorageProvider {
 
     private let persistentContainer: NSPersistentContainer
 	
-	private let moodEntryPublisher = PassthroughSubject<[MoodEntry], Never>()
+	private var moodEntryPublisher: PassthroughSubject<[MoodEntry], Never>?
     
     static var previewProvider: StorageProvider = {
         let result = StorageProvider(inMemory: true)
@@ -44,14 +44,17 @@ class StorageProvider {
 	
 	
 	func observe() -> AnyPublisher<[MoodEntry], Never> {
-		let managedObjectContext = persistentContainer.viewContext
-		let notificationCenter = NotificationCenter.default
-		notificationCenter.addObserver(
+		if moodEntryPublisher == nil {
+			moodEntryPublisher = PassthroughSubject<[MoodEntry], Never>()
+			let managedObjectContext = persistentContainer.viewContext
+			let notificationCenter = NotificationCenter.default
+			notificationCenter.addObserver(
 				self,
 				selector: #selector(managedObjectContextObjectsDidChange),
 				name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-				object: managedObjectContext)
-		return moodEntryPublisher.eraseToAnyPublisher()
+				object: managedObjectContext)			
+		}
+		return moodEntryPublisher!.eraseToAnyPublisher()
 		
 	}
 	
@@ -61,7 +64,7 @@ class StorageProvider {
 		if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
 
 			if let castedInserts = inserts as? Set<DbMoodEntry> {
-				moodEntryPublisher.send(
+				moodEntryPublisher?.send(
 					Array(castedInserts).map { $0.moodEntry() }
 				)
 			}

@@ -18,25 +18,26 @@ struct StatsView: View {
 		]
 	
     var body: some View {
-        ZStack {
-            LinearGradient.main
-                .ignoresSafeArea()
-			ScrollView {
-				LazyVGrid(
-					columns: columns,
-					alignment: .center,
-					spacing: 16
-				) {
-					ForEach(viewModel.categorieStatistics, id: \.self) { statistic in
-						CategoryStatsGridItemView(statistic: statistic)
-							.frame(height: 175)
+		NavigationView {
+			ZStack {
+				LinearGradient.main
+					.ignoresSafeArea()
+				ScrollView {
+					LazyVGrid(
+						columns: columns,
+						alignment: .center,
+						spacing: 16
+					) {
+						ForEach(viewModel.categorieStatistics, id: \.id) { statistic in
+							CategoryStatsGridItemView(statistic: statistic)
+								.frame(height: 175)
+						}
 					}
+					.padding([.top])
 				}
+				.navigationTitle("stats")
 			}
-		}.onAppear {
-			viewModel.calculateStatistics()
 		}
-            
     }
 }
 

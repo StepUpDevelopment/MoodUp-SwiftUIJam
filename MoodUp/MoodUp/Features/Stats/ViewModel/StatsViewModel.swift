@@ -6,17 +6,32 @@
 //
 
 import Foundation
+import Combine
 
 class StatsViewModel: ObservableObject {
 	
 	private var storageProvider: StorageProvider
+	@Published var categorieStatistics: [CategoryStatistic] = []
+	private var cancellable = Set<AnyCancellable>()
 	
 	init(storageProvider: StorageProvider) {
-		self.storageProvider = storageProvider		
+		self.storageProvider = storageProvider
+		calculateStatistics()
+		observeEntries()
+	}
+	
+	func observeEntries() {
+		storageProvider
+			.observe()
+			.sink(receiveValue: { _ in
+				self.calculateStatistics()
+			})
+			.store(in: &cancellable)
 	}
 	
 	func calculateStatistics() {
-		categorieStatistics.removeAll()
+		
+		var localStatistics: [CategoryStatistic] = []
 		let categories = storageProvider.getAllCategories()
 		categories.forEach { category in
 			let results = Dictionary(grouping: category.moodCategories ?? [], by: { (element: MoodEntry) in
@@ -27,54 +42,18 @@ class StatsViewModel: ObservableObject {
 				moodTypes.append(MoodTypeValue(type: key, value: Double(results[key]!.count)))
 			}
 			if !moodTypes.isEmpty {
-				categorieStatistics.append(CategoryStatistic(moodCategory: category, moodTypeValues: moodTypes))
+				localStatistics.append(CategoryStatistic(moodCategory: category, moodTypeValues: moodTypes))
 			}
 		}
+		categorieStatistics = localStatistics
 	}
-	
-	@Published var categorieStatistics: [CategoryStatistic] =
-	    [
-//			CategoryStatistic(moodCategory: MoodCategory(identifier: 1, title: "Food", iconName: "CategoryFood"), moodTypeValues: [
-//				MoodTypeValue(type: .bad, value: 10),
-//				MoodTypeValue(type: .awful, value: 5),
-//				MoodTypeValue(type: .excellent, value: 25),
-//				MoodTypeValue(type: .great, value: 25),
-//				MoodTypeValue(type: .meh, value: 80)
-//			]),
-//			CategoryStatistic(moodCategory: MoodCategory(identifier: 2, title: "Food", iconName: "CategoryFood"), moodTypeValues: [
-//				MoodTypeValue(type: .bad, value: 10),
-//				MoodTypeValue(type: .awful, value: 5),
-//				MoodTypeValue(type: .excellent, value: 25),
-//				MoodTypeValue(type: .great, value: 25),
-//				MoodTypeValue(type: .meh, value: 80)
-//			]),
-//			CategoryStatistic(moodCategory: MoodCategory(identifier: 3, title: "Food", iconName: "CategoryFood"), moodTypeValues: [
-//				MoodTypeValue(type: .bad, value: 10),
-//				MoodTypeValue(type: .awful, value: 5),
-//				MoodTypeValue(type: .excellent, value: 25),
-//				MoodTypeValue(type: .great, value: 25),
-//				MoodTypeValue(type: .meh, value: 80)
-//			]),
-//			CategoryStatistic(moodCategory: MoodCategory(identifier: 4, title: "Food", iconName: "CategoryFood"), moodTypeValues: [
-//				MoodTypeValue(type: .bad, value: 10),
-//				MoodTypeValue(type: .awful, value: 5),
-//				MoodTypeValue(type: .excellent, value: 25),
-//				MoodTypeValue(type: .great, value: 25),
-//				MoodTypeValue(type: .meh, value: 80)
-//			])
-		]
-	
-	
 }
 
-struct CategoryStatistic : Hashable, Equatable{
-	static func == (lhs: CategoryStatistic, rhs: CategoryStatistic) -> Bool {
-		lhs.moodCategory.id == rhs.moodCategory.id
-	}
-	
+struct CategoryStatistic :  Identifiable {
+	var id = UUID()
 	var moodCategory: MoodCategory
 	var moodTypeValues: [MoodTypeValue]
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(moodCategory.id)
-	}
+//	func hash(into hasher: inout Hasher) {
+//		hasher.combine(moodCategory.id)
+//	}
 }
